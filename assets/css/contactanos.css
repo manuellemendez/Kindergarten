@@ -1,0 +1,99 @@
+
+
+/* Style inputs */
+input[type=text], select, textarea {
+  
+  padding: 12px;
+  border: 2px solid green;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  margin-left: 120px;
+  margin-right: 150px;
+  resize: vertical;
+  border-radius: 50px;
+
+}
+
+
+input[type=email]{
+  border-radius: 50px;
+  padding: 12px;
+  border:2px solid green;
+  margin-left: 120px;
+}
+textarea{
+
+  margin-left: 120px;
+ 
+  
+}
+
+label{
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+#forma{
+  margin-left: 150px;
+  font-size: 20px;
+}
+
+
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  transition: 1.5s;
+}
+
+input[type=submit]:hover {
+  background-color: #925be1;
+  border-radius: 50px;
+}
+
+/* Style the container/contact section background-color: #19959b;*/
+.container1 {
+  border-radius: 90px;
+  background-image: url(https://images.pexels.com/photos/421999/pexels-photo-421999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  padding: 50px;
+  box-shadow: 5px 10px 8px 10px grey;
+  background-size: cover;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+
+
+body::-webkit-scrollbar{
+ display: none;
+}
+
+
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+  font-size: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+
+
+
+

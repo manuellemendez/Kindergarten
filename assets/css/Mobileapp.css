@@ -1,0 +1,607 @@
+/*Contactanos*/
+
+/**/@media only screen and (max-width: 800px) {
+  iframe  {
+  height: 180px;
+  width: 450px;   
+  margin-left: 14px !important;
+  margin-top: -30px;
+}
+
+@media only screen and (max-width: 500px) {
+    iframe  {
+    height: 200px;
+    width: 250px;   
+margin-top:-35px ;
+ }
+ .Logotipo1{
+     position: absolute;
+     bottom: 87px;
+     left: -62px;
+     opacity: 1;
+     height: 100px;
+     width: 150px;
+
+ }
+
+
+
+
+
+ .PlaceholderEmail, {
+
+ }
+ @media only screen and (min-width: 300px) and (max-width:700px){
+  .PlaceholderEmail{
+    margin-left: 52px !important;
+  }
+  
+ }
+
+
+@media only screen and (max-width: 500px){
+  .forma{
+    margin-left: 120px !important;
+  }
+}
+
+
+  }
+  /**/@media only screen and (max-width: 800px){
+    #MobileContactanos {
+        margin-top: 150px;
+        display: grid;
+        justify-content: end;
+       
+    
+    iframe{
+      height: 150px;
+      width: 350px;
+    }
+  }} 
+  @media only screen and (max-width: 500px){
+    #MobileContactanos {
+        margin-top: 40px;
+        margin-left: 53px;
+        display: grid;
+        justify-content: center;
+       
+    } 
+  }
+
+  @media only screen and (max-width: 500px){
+   #Placeholder1 {
+    width: 200px !important;
+   margin-left: 48px;
+}
+#subject{
+height: 110px !important;
+width: 250px !important;
+margin-left: 52px !important;
+}
+
+  }
+
+/*Large Screen Contactanos*/
+textarea{
+
+}
+@media only screen and (min-width: 1850px) and (max-width:2000px){
+  textarea{
+    margin-left: 15px !important;
+  }
+}
+
+
+
+
+  /*Noticias*/
+
+  @media only screen and (max-width:500px){
+
+   .Logotipo2{
+     
+    position: absolute !important;
+    bottom: -8px;
+    left: -64px;
+    opacity: 2;
+    height: auto;
+    width: auto;
+   
+}
+   }
+   .card{
+     margin-top: 10px;
+   }
+
+   
+   .Letrero{
+     padding-top: 55px;
+    margin-top: 25px;
+   }
+   .NoticiaFoto{
+     width: 100%;
+     height: auto;
+   }
+  }
+
+  #nave{
+    position: absolute;
+    bottom: 230em;
+    left: 4em;
+    
+   }
+   @media only screen and (max-width:800px){
+    #nave{
+      position: absolute;
+      top:1200px;
+      left: 50px !important;
+      opacity: .3!important;
+    
+    }
+  }
+  @media only screen and (max-width:500px){
+    #nave{
+      position: absolute;
+      top:1000px;
+      opacity: .3!important;
+    
+    }
+  }
+
+  #nave1{
+    
+  }
+  @media only screen and (max-width:500px){
+    #nave1{
+      position: absolute;
+      top:149em;
+      opacity: .3!important;
+    margin-left: -100em;
+    }
+  }
+
+  #nave2{
+
+  }
+ @media only screen and (max-width:500px){
+  #nave2{
+margin-left: -90em;
+margin-bottom: -65em;
+opacity: .3;
+  }
+ }
+
+
+
+
+
+  /*Extracurricular*/
+
+.Logotipo4{
+
+}
+@media only screen and (max-width:500px){
+  .Logotipo4{
+    position: absolute;
+    right: 179px;
+    margin-top: -145px;
+  }
+}
+@media only screen and (max-width:375px){
+  .Logotipo4{
+    position: absolute;
+    right: 160px;
+    margin-top: -145px;
+  }
+}
+.container > .navbar-header{
+
+}
+
+@media only screen and (max-width:500px){
+  .container > .navbar-header{
+margin-right: -17px;
+
+  }
+}
+.caption{
+
+}
+@media only screen and (max-width:500px){
+  .caption{
+    text-align: center;
+  }
+}
+
+.Extra{
+
+}
+
+@media only screen and (max-width:500px){
+  .Extra{
+    font-size: 30px;
+    padding: 0px;
+  }
+}
+
+.caption span.border{
+
+}
+@media only screen and (max-width:500px){
+  .caption span.border{
+    font-size: 30px;
+  }
+}
+
+
+
+
+/*Freebie*/
+
+.tracking-in-expand {
+
+}
+
+@media only screen and (max-width:500px){
+  .tracking-in-expand{
+    font-size: 50px !important;
+  }
+}
+
+.Logotipo{
+
+}
+
+@media only screen and (min-width:750px){
+  .Logotipo{
+    position: absolute;
+    margin-top: -72px !important;
+    right: -186px !important;
+  }
+  }
+
+
+
+@media only screen and (max-width:500px){
+.Logotipo{
+  position: absolute;
+  right: 190px !important;
+}
+}
+@media only screen and (max-width:375px){
+  .Logotipo{
+  margin-right: -37px;
+  }
+}
+
+
+
+
+/*Laptop*/
+
+#nave2{
+position: absolute;
+bottom: 132em;
+left: 105em;
+}
+@media only screen and (max-width:1900px){
+  #nave2{
+    position: absolute;
+    bottom:132em !important;
+    left: 95.5em !important;
+  }
+  
+
+}
+@media only screen and (max-width:1500px){
+#nave2{
+  position: absolute;
+  bottom:132em !important;
+  left: 95.5em !important;
+}
+
+
+#nave1{
+
+}
+@media only screen and (max-width:1900px){
+  #nave1{
+    position: absolute;
+    bottom: 76em;
+    left:0em !important;
+    
+  }
+
+}
+@media only screen and (max-width:1500px){
+  #nave1{
+    position: absolute;
+    bottom: 132em;
+    left:105em !important;
+  }
+
+}
+
+
+
+/*Educacion Laptop*/
+
+.Mobilecard{
+
+}
+
+@media only screen and (min-width:1500px) and (max-width:1525px){
+  .Mobilecard{
+margin-top: -50px;
+  }
+}
+
+
+
+
+
+
+
+
+/*Apple Mac*/
+
+.Logotipo4{
+
+}
+
+@media only screen and (min-width:1250px) and (max-width:1520px){
+.Logotipo4{
+margin-right: -25px;
+}
+}
+
+.navbar-brand{
+  
+}
+@media only screen and (min-width:1250px) and (max-width:1520px){
+  .navbar-brand{
+    margin-left: 115px !important;
+  }
+}
+.Logotipo{
+
+}
+@media only screen and (min-width:1250px) and (max-width:1520px){
+  .Logotipo{
+position: absolute;
+left: -70px;
+  }
+}
+
+
+
+@media only screen and (min-width:1250px) and (max-width:1290px){
+  #navbar-brandMobile{
+margin-left: 120px !important;
+  } 
+}
+
+.navbar-brand{
+
+}
+@media only screen and (min-width:1250px) and (max-width:1290px){
+  .navbar-brand{
+margin-left: 60px ;
+  }
+}
+
+
+
+
+.description1{
+
+}
+@media only screen and (min-width:1250px) and (max-width:1600px){
+  .description1{
+margin-bottom: -30px !important;
+  }
+}
+.description2{
+
+}
+@media only screen and (min-width:1250px) and (max-width:1600px){
+  .description2{
+margin-bottom: 74px !important;
+  }
+}
+
+.description{
+
+}
+@media only screen and (min-width:1500px) and (max-width:1600px){
+  .description{
+margin-bottom: 42px !important;
+  }
+}
+
+
+#nave2{
+
+}
+@media only screen and (min-width:1300px) and (max-width:1520px){
+  #nave2{
+bottom: 127em !important;
+left: 52.5em !important;
+opacity: 0.3;
+z-index: 5;
+  }
+}
+
+#nave{
+
+}
+
+@media only screen and (min-width:1300px) and (max-width:1520px){
+  #nave{
+    position: absolute;
+    bottom: 217em !important;
+    left: 17em !important;
+    opacity: 0.3;
+    z-index: 5;
+  }
+}
+#nave1{
+
+}
+
+@media only screen and (min-width:1300px) and (max-width:1520x){
+  #nave1{
+    position: absolute;
+    bottom: 39em !important;
+    left: 51em !important;
+    opacity: 0.3;
+    z-index: 5;
+  }
+}
+
+@media only screen and (min-width:1250px) and (max-width:1290px){
+  #nave2{
+bottom: 140em !important;
+left: 52.5em !important;
+opacity: 0.3;
+z-index: 5;
+  }
+}
+
+@media only screen and (min-width:1250px) and (max-width:1290px){
+  #nave{
+bottom: 230em !important;
+left: 52.5em !important;
+opacity: 0.3;
+z-index: 5;
+  }
+}
+
+@media only screen and (min-width:1250px) and (max-width:1290px){
+  #nave1{
+bottom: 34em !important;
+left: 20.5em !important;
+opacity: 0.3;
+z-index: 5;
+  }
+}
+
+
+
+
+.PlaceholderEmail{
+
+}
+
+@media only screen and (max-width:1250px) and (min-width:1400px){
+  .PlaceholderEmail{
+margin-left: 57px !important;
+  }
+}
+
+textarea{
+
+}
+@media only screen and (max-width:1250px) and (min-width:1400px) {
+  textarea{
+   margin-left: 62px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+/*Educacion*/
+
+.Log1{
+ position: absolute !important;
+    right: 300px !important;
+}
+@media only screen and (max-width:375px){
+  .Log1{
+  
+  }
+}
+
+#navbar-Educacion{
+
+}
+@media only screen and (max-width:501px){
+  #navbar-Educacion{
+   margin-top: 80px;
+  }
+}
+@media only screen and (max-width:375px){
+  #navbar-Educacion{
+   margin-top: 10px;
+  }
+}
+
+
+
+/*Ipad*/
+
+.PlaceholderEmail{
+
+}
+
+@media only screen and (min-width:700px) and (max-width:800px) {
+  .PlaceholderEmail{
+margin-left: 120px !important ;
+  }
+}
+
+textArea{
+
+}
+
+@media only screen and (min-width:700px) and (max-width:800px){
+  textArea{
+    
+    margin-left: 120px !important;
+  }
+}
+
+.Placeholder2{
+
+}
+@media only screen and (min-width: 1900px) {
+  .Placeholder2{
+margin-left: 50px !important;
+  }
+}
+
+
+
+@media only screen and (max-width:800px) {
+  #nave2{
+bottom: 130em !important;
+left: 18em !important;
+opacity: 0.3;
+z-index: 5;
+  }
+}
+
+
+
+@media only screen and (max-width:800px){
+  #nave1{
+bottom: 44em !important;
+left: 20.5em !important;
+opacity: 0.3;
+z-index: 5;
+  }
+}
+
+
+@media only screen and (max-width:800px){
+  .colorContactanos{
+color: #0070ff !important;
+  }
+}
