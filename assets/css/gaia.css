@@ -4123,6 +4123,16 @@ animation: 30s slider infinite;
   100% {background:; left: 0px; top: 0px;}
 }
 */
+
+.carousel-img{
+  height: 70rem;
+}
+@media only screen and (max-width: 500px) {
+  .carousel-img{
+    height: 80vh;
+  }
+  
+}
 .Logotipo{
  position: absolute;
  right: 0px;

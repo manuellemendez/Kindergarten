@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 .Logo2{
   position: absolute;
   right: 260px !important;
@@ -74,12 +68,12 @@ padding: 10px;
   padding-bottom: 0;
   position:relative;
 } 
-}
 
-.textoE{
+
+.textoE {
   font-size:15px;
   color: #9e1d9c; 
-  font-family: 
+  
 }
 
 .individual{
@@ -147,9 +141,9 @@ background-color: blanchedalmond;
 
 
 
-.backgroundJ{
+/* .backgroundJ{
   background-color: ;
-}
+} */
 
 .background-fotos{
  background-image: url(https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
@@ -223,9 +217,9 @@ background-color: blanchedalmond;
 }
 
 
-#navbar-brandMobile{
+/* #navbar-brandMobile{
 
-} 
+}  */
 
 @media only screen and (min-width:1250px) and (max-width:1290px){
   #navbar-brandMobile{
@@ -233,11 +227,12 @@ margin-left: 120px !important;
   } 
 }
 
-.navbar-brand{
+/* .navbar-brand{
 
-}
+} */
 @media only screen and (min-width:1250px) and (max-width:1290px){
+
   .navbar-brand{
 margin-left: 60px ;
   }
-}
+}}
