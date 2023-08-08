@@ -1,1 +1,10 @@
-{"version":3,"sources":["homePage.scss","homePage.css"],"names":[],"mappings":"AAEI;EACI,aAAA;ACDR","file":"homePage.css"}
+{
+  "version": 3,
+  "sources": [
+    "homePage.scss",
+    "homePage.css"
+  ],
+  "names": [],
+  "mappings": "AAEI;EACI,aAAA;ACDR",
+  "file": "homePage.css"
+}

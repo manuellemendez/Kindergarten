@@ -1,238 +1,227 @@
-
-.Logo2{
+.Logo2 {
   position: absolute;
   right: 260px !important;
 }
 
-.imagenes{
-	display: flex;
+.imagenes {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 100px;
   margin: 15px;
 }
 
- .fotos{
- 	font-family: 'Indie Flower', cursive;
- 	font-size:3em;	
-	border-bottom:2px solid pink;
-	border-right: 2px solid pink; 
-	width:400px;
-	text-align: center;
-	box-shadow: 4px 4px 5px #888888;
-	margin:0px;
-	margin-top: 10px; 
-}
-	
-
-#imagendefondo{
- background-image: url(https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
-  /* Full height */
-  height: 100%; 
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size:100% 100% ; 
-}
-
-
-
-
-
-#Texto{
-font-family: "Indie Flower", cursive;
-font-size: 18px;
-color: #5b5b5b;
-text-align:justify;
-padding: 10px;
-  
-}
-#textoextracurricular{
+.fotos {
+  font-family: 'Indie Flower', cursive;
+  font-size: 3em;
+  border-bottom: 2px solid pink;
+  border-right: 2px solid pink;
+  width: 400px;
   text-align: center;
-  background-image:url(); 
+  box-shadow: 4px 4px 5px #888888;
+  margin: 0px;
+  margin-top: 10px;
 }
 
-.imagenactividadextra{
-
+#imagendefondo {
+  background-image: url(https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
   /* Full height */
-  height: 100%; 
+  height: 100%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size:100% 100% ; 
-  box-sizing:border-box;
-  padding-bottom: 0;
-  position:relative;
-} 
+  background-size: 100% 100%;
+}
 
+#Texto {
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
+  color: #5b5b5b;
+  text-align: justify;
+  padding: 10px;
+}
+#textoextracurricular {
+  text-align: center;
+  background-image: url();
+}
+
+.imagenactividadextra {
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  padding-bottom: 0;
+  position: relative;
+}
 
 .textoE {
-  font-size:15px;
-  color: #9e1d9c; 
-  
+  font-size: 15px;
+  color: #9e1d9c;
 }
 
-.individual{
-margin: 7px !important;
+.individual {
+  margin: 7px !important;
 }
 
-.JardinFotos1{
+.JardinFotos1 {
   width: 250px;
-	height: 194px;
-	margin: 0px;
+  height: 194px;
+  margin: 0px;
 }
 
-img{ 
- 
-	
-	transition:all 1.2s;
-
+img {
+  transition: all 1.2s;
 }
 
-img:hover{
-	transform:scale(1.8);
-	animation: forwards;
-	border-bottom: 2px #5E5C62; 
-
-
+img:hover {
+  transform: scale(1.8);
+  animation: forwards;
+  border-bottom: 2px #5e5c62;
 }
 
-.letra1{
+.letra1 {
   font-family: 'Schoolbell', cursive;
   font-size: 15px;
 }
 
-#fondo{
-box-sizing: border-box;
-background-color: aliceblue;
+#fondo {
+  box-sizing: border-box;
+  background-color: aliceblue;
 }
 
-#fondo1{
-background-color: blanchedalmond;
- /* Full height */
-  height: 100%; 
+#fondo1 {
+  background-color: blanchedalmond;
+  /* Full height */
+  height: 100%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size:100% 100% ; 
-} 
+  background-size: 100% 100%;
+}
 
-
-.htag{
-  color:#06ACA6;
+.htag {
+  color: #06aca6;
   box-sizing: border-box;
-
 }
 
-#navbarC{
-  background-color:#32b8eb; 
+#navbarC {
+  background-color: #32b8eb;
 }
 
-
-.navbar-transparent{
- background-color: #6cbbf5 !important;
- }
-
-
+.navbar-transparent {
+  background-color: #6cbbf5 !important;
+}
 
 /* .backgroundJ{
   background-color: ;
 } */
 
-.background-fotos{
- background-image: url(https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+.background-fotos {
+  background-image: url(https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 }
-
-
-
-
-
-
-
-
 
 @media (min-width: 768px) {
   .navbar-transparent .navbar-brand,
-  [class*="navbar-ct"] .navbar-brand {
-    color: #8D2289;
+  [class*='navbar-ct'] .navbar-brand {
+    color: #8d2289;
     opacity: 1;
     filter: alpha(opacity=100);
   }
 
+  .spaceblank {
+    background-color: grey;
+    box-sizing: border-box;
+  }
 
-.spaceblank{
-	background-color: grey;
-	box-sizing: border-box;
-}
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {
+      width: 8.33%;
+    }
+    .col-2 {
+      width: 16.66%;
+    }
+    .col-3 {
+      width: 25%;
+    }
+    .col-4 {
+      width: 33.33%;
+    }
+    .col-5 {
+      width: 41.66%;
+    }
+    .col-6 {
+      width: 50%;
+    }
+    .col-7 {
+      width: 58.33%;
+    }
+    .col-8 {
+      width: 66.66%;
+    }
+    .col-9 {
+      width: 75%;
+    }
+    .col-10 {
+      width: 83.33%;
+    }
+    .col-11 {
+      width: 91.66%;
+    }
+    .col-12 {
+      width: 100%;
+    }
+  }
 
+  [class*='col-'] {
+    width: 100%;
+  }
 
+  #fotosEducacion,
+  #fotosEducacion1,
+  #fotosEducacion2,
+  #fotosEducacion3,
+  #fotosEducacion4,
+  #fotosEducacion5,
+  #fotosEducacion6,
+  #fotosEducacion7,
+  #fotosEducacion8 {
+    height: 100px !important;
+  }
 
+  #Directora {
+    height: 150px;
+    width: 130px;
+  }
+  #letter-justify {
+    text-align: justify;
+  }
 
-
-
-
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;}
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;}
-}
-
-[class*="col-"] {
-  width: 100%;
-}
-
-
-
-
-#fotosEducacion,#fotosEducacion1,
-#fotosEducacion2,#fotosEducacion3,
-#fotosEducacion4,#fotosEducacion5,#fotosEducacion6,#fotosEducacion7,#fotosEducacion8{
-  height: 100px !important; 
-}
-
-#Directora{
-  height: 150px;
-  width: 130px;
-
-
-}
-#letter-justify{
-  text-align: justify;
-}
-
-
-/* #navbar-brandMobile{
+  /* #navbar-brandMobile{
 
 }  */
 
-@media only screen and (min-width:1250px) and (max-width:1290px){
-  #navbar-brandMobile{
-margin-left: 120px !important;
-  } 
-}
+  @media only screen and (min-width: 1250px) and (max-width: 1290px) {
+    #navbar-brandMobile {
+      margin-left: 120px !important;
+    }
+  }
 
-/* .navbar-brand{
+  /* .navbar-brand{
 
 } */
-@media only screen and (min-width:1250px) and (max-width:1290px){
-
-  .navbar-brand{
-margin-left: 60px ;
+  @media only screen and (min-width: 1250px) and (max-width: 1290px) {
+    .navbar-brand {
+      margin-left: 60px;
+    }
   }
-}}
+}

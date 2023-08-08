@@ -1,8 +1,7 @@
-
-
 /* Style inputs */
-input[type=text], select, textarea {
-  
+input[type='text'],
+select,
+textarea {
   padding: 12px;
   border: 2px solid green;
   margin-top: 6px;
@@ -11,37 +10,30 @@ input[type=text], select, textarea {
   margin-right: 150px;
   resize: vertical;
   border-radius: 50px;
-
 }
 
-
-input[type=email]{
+input[type='email'] {
   border-radius: 50px;
   padding: 12px;
-  border:2px solid green;
+  border: 2px solid green;
   margin-left: 120px;
 }
-textarea{
-
+textarea {
   margin-left: 120px;
- 
-  
 }
 
-label{
+label {
   margin-left: 5px;
   font-size: 20px;
 }
 
-#forma{
+#forma {
   margin-left: 150px;
   font-size: 20px;
 }
 
-
-
-input[type=submit] {
-  background-color: #4CAF50;
+input[type='submit'] {
+  background-color: #4caf50;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -49,7 +41,7 @@ input[type=submit] {
   transition: 1.5s;
 }
 
-input[type=submit]:hover {
+input[type='submit']:hover {
   background-color: #925be1;
   border-radius: 50px;
 }
@@ -66,13 +58,9 @@ input[type=submit]:hover {
   margin-top: 15px;
 }
 
-
-
-body::-webkit-scrollbar{
- display: none;
+body::-webkit-scrollbar {
+  display: none;
 }
-
-
 
 /* Create two columns that float next to eachother */
 .column {
@@ -85,15 +73,7 @@ body::-webkit-scrollbar{
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
-
-
-
-
-
-
-
-
