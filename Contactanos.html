@@ -232,87 +232,171 @@
             ></iframe>
           </div>
           <br />
-          <div id="MobileContactanos" class="column" style="color: black">
-            <form action="/action_page.php" id="forma" netlify>
-              <label
-                for="fname"
-                style="
-                  color: coral;
-                  background-color: antiquewhite;
-                  padding: 5px;
-                  border-radius: 10px;
-                "
-                >Nombre y Apellido</label
-              >
-              <input
-                id="Placeholder1"
-                class="Placeholder2 Place1"
-                style="width: 350px"
-                type="text"
-                id="fname"
-                name="firstname"
-                placeholder="Tu nombre.."
-              /><br />
+          <div
+            id="MobileContactanos"
+            class="column"
+            style="color: black; padding: 25px; max-width: 550px; width: 100%"
+          >
+            <form
+              action="/action_page.php"
+              id="forma"
+              netlify
+              class="contact-form"
+            >
+              <div class="form-group" style="margin-bottom: 15px">
+                <label
+                  for="fname"
+                  style="
+                    color: #ff7f50;
+                    background-color: antiquewhite;
+                    padding: 8px 15px;
+                    border-radius: 10px;
+                    display: inline-block;
+                    margin-bottom: 8px;
+                    font-weight: 600;
+                  "
+                  >Nombre y Apellido</label
+                >
+                <input
+                  id="fname"
+                  name="firstname"
+                  placeholder="Tu nombre..."
+                  type="text"
+                  class="form-control"
+                  style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                    box-sizing: border-box;
+                  "
+                  required
+                />
+              </div>
 
-              <label
-                for="lname"
-                style="
-                  color: coral;
-                  background-color: antiquewhite;
-                  padding: 5px;
-                  border-radius: 10px;
-                "
-                >Telefono:</label
-              >
-              <input
-                id="Placeholder1"
-                class="Placeholder2 Place1"
-                style="width: 350px"
-                type="text"
-                id="lname"
-                name="lastname"
-                placeholder="Telefono:.."
-              /><br />
+              <div class="form-group" style="margin-bottom: 15px">
+                <label
+                  for="lname"
+                  style="
+                    color: #ff7f50;
+                    background-color: antiquewhite;
+                    padding: 8px 15px;
+                    border-radius: 10px;
+                    display: inline-block;
+                    margin-bottom: 8px;
+                    font-weight: 600;
+                  "
+                  >Teléfono</label
+                >
+                <input
+                  id="lname"
+                  name="lastname"
+                  placeholder="Teléfono..."
+                  type="text"
+                  class="form-control"
+                  style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                    box-sizing: border-box;
+                  "
+                />
+              </div>
 
-              <label
-                class="EMAIL"
-                for="Email"
-                style="
-                  color: coral;
-                  background-color: antiquewhite;
-                  padding: 5px;
-                  border-radius: 10px;
-                "
-                >Email</label
-              ><br />
-              <input
-                id="Placeholder1"
-                class="PlaceholderEmail"
-                style="width: 350px"
-                type="email"
-                name="email"
-                placeholder="Tu Email.."
-              /><br /><br />
+              <div class="form-group" style="margin-bottom: 15px">
+                <label
+                  for="email"
+                  style="
+                    color: #ff7f50;
+                    background-color: antiquewhite;
+                    padding: 8px 15px;
+                    border-radius: 10px;
+                    display: inline-block;
+                    margin-bottom: 8px;
+                    font-weight: 600;
+                  "
+                  >Email</label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  placeholder="Tu Email..."
+                  type="email"
+                  class="form-control"
+                  style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                    box-sizing: border-box;
+                  "
+                  required
+                />
+              </div>
 
-              <label
-                for="Cuentanos"
-                style="
-                  color: coral;
-                  background-color: antiquewhite;
-                  padding: 5px;
-                  border-radius: 10px;
-                "
-                >Cuentanos Mas</label
-              >
+              <div class="form-group" style="margin-bottom: 20px">
+                <label
+                  for="subject"
+                  style="
+                    color: #ff7f50;
+                    background-color: antiquewhite;
+                    padding: 8px 15px;
+                    border-radius: 10px;
+                    display: inline-block;
+                    margin-bottom: 8px;
+                    font-weight: 600;
+                  "
+                  >Cuéntanos Más</label
+                >
+                <textarea
+                  id="subject"
+                  name="subject"
+                  placeholder="Escríbenos..."
+                  class="form-control"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                    box-sizing: border-box;
+                    resize: vertical;
+                    max-height: 250px;
+                    overflow-y: auto;
+                  "
+                ></textarea>
+              </div>
 
-              <textarea
-                class="textArea"
-                id="subject"
-                name="subject"
-                placeholder="Escribenos.."
-                style="height: 170px; width: 350px"
-              ></textarea>
-              <input type="submit" value="Submit" />
+              <div style="text-align: center">
+                <input
+                  type="submit"
+                  value="Enviar Mensaje"
+                  style="
+                    background-color: #ff7f50;
+                    color: white;
+                    border: none;
+                    padding: 12px 30px;
+                    border-radius: 25px;
+                    font-size: 18px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                    margin: 0 auto;
+                  "
+                  onmouseover="this.style.backgroundColor='#ff6a3c'"
+                  onmouseout="this.style.backgroundColor='#ff7f50'"
+                />
+              </div>
             </form>
           </div>
         </div>
