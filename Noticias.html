@@ -251,131 +251,7 @@
       />
     </div>
     <div class="container">
-      <div class="card-group vgr-cards">
-        <div class="card">
-          <div class="card-img-body">
-            <img
-              class="card-img"
-              src="assets/img/IMG-20200312-WA0000.jpg"
-              width="1500"
-              alt="Card image cap"
-            />
-          </div>
-          <div class="card-body">
-            <h4
-              class="card-title"
-              style="padding: 15px; font-size: 25px; color: cornflowerblue"
-            >
-              Dia de Natación
-            </h4>
-            <p
-              class="card-text"
-              style="
-                color: black;
-                font-size: 21px;
-                padding: 19.5px;
-                text-align: justify;
-              "
-            >
-              Deporte formativo que ofrece el jardín como parte de un
-              crecimiento personal. Las niñas y niños de nuestro jardín
-              disfrutan muchísimo este deporte al integrarse con un objetivo
-              común “aprender a nadar” y fortalecer una competitividad sana .
-              Nosotros como institución educativa procuramos no solo tener un
-              excelente nivel académico sino formar niños y niñas disciplinados,
-              autónomos y líderes dado que a través de este deporte se trabajan
-              y ejercitan la mayoria de los músculos, la coordinación motora, el
-              sistema circulatorio, respiratorio y contribuye en el desarrollo
-              de la independencia y la autoconfianza de los niños. Por todo esto
-              y más consideramos que es uno de los deportes más completos.
-            </p>
-            <!--<a href="#" class="btn btn-outline-primary">Primary</a>-->
-          </div>
-        </div>
-        <br />
-
-        <div class="card">
-          <div class="card-img-body">
-            <img
-              class="card-img"
-              src="assets/img/IMG-20200212-WA0002.jpg"
-              alt="Card image cap"
-            />
-          </div>
-          <div class="card-body">
-            <h4
-              class="card-title"
-              style="padding: 15px; font-size: 25px; color: darkgreen"
-            >
-              Aniversario 30 de mi pequeño San Francisco de Asís
-            </h4>
-            <p
-              class="card-text"
-              style="
-                color: black;
-                font-size: 21px;
-                padding: 19.5px;
-                text-align: justify;
-              "
-            >
-              Celebrar nuestro aniversario # 30 es para nosotros un motivo que
-              va más allá de una simple festividad; es la oportunidad de
-              reconocer el fuerzo, dedicación y arduo trabajo de todas aquellas
-              personas que han sido parte de nuestra institución durante todo
-              este tiempo quienes nos han ayudado a forjar nuestra identidad y
-              alcanzar el reconocimiento ante la comunidad del barrio San
-              Fernando. Llevamos 30 años brindando una educación con amor, una
-              educación seria, con objetivos claros de educar niños para el
-              futuro. Para celebrar este aniversario número 30, realizamos una
-              maravillosa experiencia en el parque del triángulo del sector de
-              San Fernando acompañados de todos los padres de familia,
-              estudiantes y miembros de la comunidad; compartimos una deliciosa
-              torta, juegos de competencia, rondas infantiles, bailes, cantamos
-              y disfrutamos de tiempo en familia. <b>FELIZ ANIVERSARIO!</b>
-            </p>
-            <!--<a href="#" class="btn btn-outline-primary">Primary</a>-->
-          </div>
-        </div>
-        <br />
-
-        <div class="card">
-          <div class="card-img-body">
-            <video width="1140px" height="500px" controls>
-              <source src="assets/videos/Bienvenidos.mp4" type="video/mp4" />
-            </video>
-            <!-- <img
-              class="card-img"
-              src="assets/img/IMG-20200611-WA0010.jpg"
-              width="1500px"
-              alt="Card image cap"
-            /> -->
-          </div>
-          <div class="card-body">
-            <h4
-              class="card-title"
-              style="padding: 15px; font-size: 25px; color: #ee2525"
-            >
-              Comienzo de nueva jornada escolar
-            </h4>
-            <p
-              class="card-text"
-              style="
-                color: black;
-                font-size: 21px;
-                padding: 19.5px;
-                text-align: justify;
-              "
-            >
-              Comienza la aventura del conocimiento! Con la luz del día, las
-              aulas se llenan de risas y la curiosidad despierta. Estudiantes
-              ansiosos y maestros entusiastas se reúnen para explorar un mundo
-              de aprendizaje en cada rincón del jardin. Que empiece la jornada
-              escolar llena de descubrimientos y crecimiento!
-            </p>
-            <!-- <a href="#" class="btn btn-outline-primary">Primary</a>-->
-          </div>
-        </div>
-      </div>
+      <div id="noticias-list" class="card-group vgr-cards"></div>
     </div>
     <br />
 
@@ -424,27 +300,7 @@
             <div class="info">
               <h5 class="title">Noticias</h5>
               <nav>
-                <ul>
-                  <li>
-                    <a href="Noticias.html"
-                      >Fitness infantil es una academia que le permite a los
-                      niños enfrentarse al agua.
-                    </a>
-                  </li>
-                  <br />
-                  <li>
-                    <a href="Noticias.html"
-                      >Celebrar nuestro aniversario # 30 es para nosotros un
-                      motivo que va más allá de una simple festividad.</a
-                    ><br />
-                  </li>
-                  <li>
-                    <a href="Noticias.html"
-                      >El jardín Infantil cuenta con diferentes conveníos de los
-                      colegios más sobresalientes en la ciudad de Cali.</a
-                    >
-                  </li>
-                </ul>
+                <ul id="noticias-footer-list"></ul>
               </nav>
             </div>
           </div>
@@ -530,6 +386,122 @@
     type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js"
   ></script>
+
+  <script>
+    ;(function () {
+      var noticiasList = document.getElementById('noticias-list')
+      var noticiasFooterList = document.getElementById('noticias-footer-list')
+      var footerMaxItems = 3
+      var footerPreviewLength = 115
+
+      function createCard(item) {
+        var card = document.createElement('div')
+        card.className = 'card'
+
+        var cardImageBody = document.createElement('div')
+        cardImageBody.className = 'card-img-body'
+
+        var image = document.createElement('img')
+        image.className = 'card-img'
+        image.src = item.image
+        image.alt = item.imageAlt || item.title || 'Noticia'
+        cardImageBody.appendChild(image)
+
+        var cardBody = document.createElement('div')
+        cardBody.className = 'card-body'
+
+        var title = document.createElement('h4')
+        title.className = 'card-title'
+        title.style.padding = '15px'
+        title.style.fontSize = '25px'
+        title.style.color = item.titleColor || '#333'
+        title.textContent = item.title || ''
+
+        var text = document.createElement('p')
+        text.className = 'card-text'
+        text.style.color = 'black'
+        text.style.fontSize = '21px'
+        text.style.padding = '19.5px'
+        text.style.textAlign = 'justify'
+        text.textContent = item.text || ''
+
+        cardBody.appendChild(title)
+        cardBody.appendChild(text)
+        card.appendChild(cardImageBody)
+        card.appendChild(cardBody)
+
+        return card
+      }
+
+      function getFooterPreview(item) {
+        var sourceText = item.text || item.title || ''
+        var cleanedText = sourceText.replace(/\s+/g, ' ').trim()
+
+        if (cleanedText.length <= footerPreviewLength) {
+          return cleanedText
+        }
+
+        return cleanedText.slice(0, footerPreviewLength).trim() + '...'
+      }
+
+      function renderNoticias(items) {
+        if (!noticiasList) {
+          return
+        }
+
+        noticiasList.innerHTML = ''
+
+        if (!Array.isArray(items) || !items.length) {
+          var emptyMessage = document.createElement('p')
+          emptyMessage.textContent = 'No hay noticias publicadas en este momento.'
+          noticiasList.appendChild(emptyMessage)
+          return
+        }
+
+        items.forEach(function (item) {
+          noticiasList.appendChild(createCard(item))
+        })
+      }
+
+      function renderFooterNoticias(items) {
+        if (!noticiasFooterList) {
+          return
+        }
+
+        noticiasFooterList.innerHTML = ''
+
+        if (!Array.isArray(items) || !items.length) {
+          return
+        }
+
+        items.slice(0, footerMaxItems).forEach(function (item) {
+          var listItem = document.createElement('li')
+          var link = document.createElement('a')
+          link.href = 'Noticias.html'
+          link.textContent = getFooterPreview(item)
+          listItem.appendChild(link)
+          noticiasFooterList.appendChild(listItem)
+        })
+      }
+
+      fetch('/content/noticias.json')
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error('No se pudo cargar el contenido de noticias.')
+          }
+          return response.json()
+        })
+        .then(function (data) {
+          var items = Array.isArray(data.items) ? data.items : []
+          renderNoticias(items)
+          renderFooterNoticias(items)
+        })
+        .catch(function () {
+          renderNoticias([])
+          renderFooterNoticias([])
+        })
+    })()
+  </script>
 
   <!--   file where we handle all the script from the Gaia - Bootstrap Template -->
   <script type="text/javascript" src="assets/js/gaia.js"></script>

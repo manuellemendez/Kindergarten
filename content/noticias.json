@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "title": "Dia de Natacion",
+      "titleColor": "cornflowerblue",
+      "text": "Deporte formativo que ofrece el jardin como parte de un crecimiento personal. Las ninas y ninos de nuestro jardin disfrutan muchisimo este deporte al integrarse con un objetivo comun: aprender a nadar y fortalecer una competitividad sana. Nosotros como institucion educativa procuramos no solo tener un excelente nivel academico sino formar ninos y ninas disciplinados, autonomos y lideres dado que a traves de este deporte se trabajan y ejercitan la mayoria de los musculos, la coordinacion motora, el sistema circulatorio, respiratorio y contribuye en el desarrollo de la independencia y la autoconfianza de los ninos. Por todo esto y mas consideramos que es uno de los deportes mas completos.",
+      "image": "/assets/img/IMG-20200312-WA0000.jpg",
+      "imageAlt": "Dia de natacion"
+    },
+    {
+      "title": "Aniversario 30 de mi pequeno San Francisco de Asis",
+      "titleColor": "darkgreen",
+      "text": "Celebrar nuestro aniversario #30 es para nosotros un motivo que va mas alla de una simple festividad; es la oportunidad de reconocer el esfuerzo, dedicacion y arduo trabajo de todas aquellas personas que han sido parte de nuestra institucion durante todo este tiempo, quienes nos han ayudado a forjar nuestra identidad y alcanzar el reconocimiento ante la comunidad del barrio San Fernando. Llevamos 30 anos brindando una educacion con amor, una educacion seria, con objetivos claros de educar ninos para el futuro. Para celebrar este aniversario numero 30, realizamos una maravillosa experiencia en el parque del triangulo del sector de San Fernando acompanados de todos los padres de familia, estudiantes y miembros de la comunidad; compartimos una deliciosa torta, juegos de competencia, rondas infantiles, bailes, cantamos y disfrutamos de tiempo en familia. Feliz aniversario.",
+      "image": "/assets/img/IMG-20200212-WA0002.jpg",
+      "imageAlt": "Celebracion aniversario"
+    },
+    {
+      "title": "Comienzo de nueva jornada escolar",
+      "titleColor": "#ee2525",
+      "text": "Comienza la aventura del conocimiento. Con la luz del dia, las aulas se llenan de risas y la curiosidad despierta. Estudiantes ansiosos y maestros entusiastas se reunen para explorar un mundo de aprendizaje en cada rincon del jardin. Que empiece la jornada escolar llena de descubrimientos y crecimiento.",
+      "image": "/assets/img/IMG-20200611-WA0010.jpg",
+      "imageAlt": "Nueva jornada escolar"
+    }
+  ]
+}

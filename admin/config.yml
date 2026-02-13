@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "site"
+    label: "Sitio"
+    files:
+      - file: "content/noticias.json"
+        label: "Noticias"
+        name: "noticias"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Titulo", name: "title", widget: "string" }
+              - { label: "Color del titulo", name: "titleColor", widget: "string", required: false }
+              - { label: "Texto", name: "text", widget: "text" }
+              - { label: "Imagen", name: "image", widget: "image" }
+              - { label: "Texto alternativo", name: "imageAlt", widget: "string", required: false }
