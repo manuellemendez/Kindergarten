@@ -69,6 +69,8 @@ $(document).ready(function(){
         gaia.initGoogleMaps(this, lat, lng);
     });
 
+    gaia.initDescubreMasDropdownIcons();
+
 });
 
 //activate collapse right menu when the windows is resized
@@ -224,6 +226,90 @@ gaia = {
 
         // To add the marker to the map, call setMap();
         marker.setMap(map);
+    },
+
+    initDescubreMasDropdownIcons: function(){
+        $('.dropdown').each(function(){
+            var $dropdown = $(this);
+            var $toggle = $dropdown.find('.dropdown-toggle').first();
+            var toggleText = ($toggle.text() || '').toLowerCase();
+            var normalizedToggleText = toggleText.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            var isDescubreDropdown = normalizedToggleText.indexOf('descubre') !== -1;
+            var isEncontrarnosDropdown = normalizedToggleText.indexOf('donde encontrarnos') !== -1;
+
+            if(!isDescubreDropdown && !isEncontrarnosDropdown){
+                return;
+            }
+
+            $dropdown.find('.dropdown-menu > li > a').each(function(){
+                var $link = $(this);
+                var $icon = $link.find('img').first();
+                var animatedSrc = $icon.attr('src');
+
+                if(!$icon.length || !animatedSrc || animatedSrc.toLowerCase().indexOf('.gif') === -1){
+                    return;
+                }
+
+                if($icon.data('descubreGifBound')){
+                    return;
+                }
+
+                $icon.data('descubreGifBound', true);
+                $icon.css('visibility', 'hidden');
+
+                var staticFrame = new Image();
+                staticFrame.onload = function(){
+                    var canvas = document.createElement('canvas');
+                    var iconElement = $icon.get(0);
+                    var width = staticFrame.naturalWidth || (iconElement && iconElement.naturalWidth) || 18;
+                    var height = staticFrame.naturalHeight || (iconElement && iconElement.naturalHeight) || 18;
+                    var context;
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    context = canvas.getContext('2d');
+
+                    if(!context){
+                        $icon.css('visibility', 'visible');
+                        return;
+                    }
+
+                    context.drawImage(staticFrame, 0, 0, width, height);
+
+                    try {
+                        $icon.data('animatedSrc', animatedSrc);
+                        $icon.data('staticSrc', canvas.toDataURL('image/png'));
+                        $icon.attr('src', $icon.data('staticSrc'));
+                    } catch (e) {
+                        $icon.data('animatedSrc', animatedSrc);
+                    }
+
+                    $icon.css('visibility', 'visible');
+                };
+
+                staticFrame.onerror = function(){
+                    $icon.css('visibility', 'visible');
+                };
+
+                staticFrame.src = animatedSrc;
+
+                $link.on('mouseenter focusin', function(){
+                    var activeSrc = $icon.data('animatedSrc');
+
+                    if(activeSrc){
+                        $icon.attr('src', activeSrc);
+                    }
+                });
+
+                $link.on('mouseleave focusout', function(){
+                    var stillSrc = $icon.data('staticSrc');
+
+                    if(stillSrc){
+                        $icon.attr('src', stillSrc);
+                    }
+                });
+            });
+        });
     }
 
 }
@@ -311,4 +397,3 @@ var better_browser = '<div class="container"><div class="better-browser row"><di
 
 
 /*VIDEO ECTRACURRICULAR*/
-
