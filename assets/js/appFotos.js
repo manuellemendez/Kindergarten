@@ -1,39 +1,56 @@
+document.addEventListener('DOMContentLoaded', function () {
+  var galleryImages = document.querySelectorAll('.imagenes .JardinFotos1')
+  var lightbox = document.getElementById('photoLightbox')
+  var lightboxImage = document.getElementById('photoLightboxImage')
+  var closeButton = document.getElementById('photoLightboxClose')
 
-const carouselSlide = document.querySelector('.carousel-slide');
-const carouselImages = document.querySelectorAll('.carousel-slide img');
+  if (!galleryImages.length || !lightbox || !lightboxImage || !closeButton) {
+    return
+  }
 
-//Buttons
+  function openLightbox(image) {
+    lightboxImage.src = image.src
+    lightboxImage.alt = image.alt || 'Foto del jardín infantil'
+    lightbox.classList.add('is-open')
+    lightbox.setAttribute('aria-hidden', 'false')
+    document.body.style.overflow = 'hidden'
+  }
 
-const prevBtn= document.querySelector('#prevBtn');
-const nextBtn= document.querySelector('#nextBtn');
+  function closeLightbox() {
+    lightbox.classList.remove('is-open')
+    lightbox.setAttribute('aria-hidden', 'true')
+    lightboxImage.src = ''
+    document.body.style.overflow = ''
+  }
 
-//counter
+  galleryImages.forEach(function (image) {
+    image.setAttribute('tabindex', '0')
+    image.setAttribute('role', 'button')
+    image.setAttribute('aria-label', (image.alt || 'Foto del jardín infantil') + ', ampliar')
 
-let counter = 1;
+    image.addEventListener('click', function () {
+      openLightbox(image)
+    })
 
-const size= carouselImages[0].clientWidth;
+    image.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault()
+        openLightbox(image)
+      }
+    })
+  })
 
-carouselSlide.style.transform='translateX('+(-size * counter) + 'px)';
+  closeButton.addEventListener('click', closeLightbox)
 
+  lightbox.addEventListener('click', function (event) {
+    if (event.target === lightbox) {
+      closeLightbox()
+    }
+  })
 
-
-
-//Button Listeners//
-
-nextbtn.addEventListener('click',() => {
-    
-    carouselSlide.style.transition= 'transform 0.4s ease-in-out';
-    counter++;
-    console.log(counter);
-    carouselSlide.style.transform='translateX('+(-size* counter)+'px)';
-});
-
-prevbtn.addEventListener('click',()=>{
-    carouselSlide.style.transition= 'transform 0.4s ease-in-out';
-    counter--;
-    carouselSlide.style.transform='translateX('+(-size* counter)+'px)';
-});
-
-carouselSlide.addEventListener('transitionend',() =>{
-console.log('fired');
-});
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+      closeLightbox()
+    }
+  })
+})
