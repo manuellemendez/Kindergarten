@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "name": "Diana Granada Wilquin",
+      "image": "/assets/img/faces/Diana.jpg",
+      "imageAlt": "Diana Granada Wilquin",
+      "roles": ["Administradora", "Normalista"],
+      "description": ""
+    },
+    {
+      "name": "Luz Dary Santos Riano",
+      "image": "/assets/img/faces/LuzDari.jpg",
+      "imageAlt": "Luz Dary Santos Riano",
+      "roles": [
+        "Licenciatura En Pedagogia Infantil",
+        "Fundacion Universitaria del Area Andina",
+        "Docente del Grado parvulos"
+      ],
+      "description": "Soy Luz Dary Santos Riano Docente en esta hermosa institucion educativa la cual me hace inmensamente feliz y me ayuda cada dia a crecer profesional y emocionalmente, el compromiso, el esfuerzo, el afecto y el carino con sus docentes, ninos, ninas y padres de familia es maravilloso y es asi como ver a mis pequenos gigantes cada manana me llena de emocion, alegria, y energia, me llena de halagos el ensenar a esos pequenos que se alegran tanto al verte llegar, me impregna todo ese amor y afecto, lo cual me lleva a dar lo mejor de mi para ellos siempre. Agradezco a esta hermosa institucion y todo el equipo de trabajo por cada oportunidad de compartir y aprender junto con los ninos y ninas, para mi es algo que me satisface, enorgullece y enriquece mi labor de desarrollo profesional docente."
+    },
+    {
+      "name": "Blanca Nubia Gomez Sanchez",
+      "image": "/assets/img/faces/NubiaG.jpg",
+      "imageAlt": "Blanca Nubia Gomez Sanchez",
+      "roles": [
+        "Grado de transicion",
+        "Licenciatura en educacion infantil universidad del Tolima"
+      ],
+      "description": "Mis mas sinceros agradecimientos a la institucion educativa Mi Pequeno San Francisco De Asis, por brindarme la oportunidad de ser parte de esta maravillosa familia, para mi ha sido una maravillosa experiencia y gratificante, me siento muy feliz y orgullosa de mis pequenos, ya que cada dia disfruto al ver sus sonrisas, escuchar sus aventuras, anecdotas y diversas emociones, verlos felices me llena de mucho amor y hace que cada dia me enamore de mi profesion. Apreciadas directivas y maestras felicitaciones por su esfuerzo, compromiso, dedicacion y amor en esta magnifica labor. La ensenanza que deja huella no es la que se hace de cabeza a cabeza, sino de corazon a corazon."
+    },
+    {
+      "name": "Claudia Alejandra Villani Florez",
+      "image": "/assets/img/faces/Claudia.jpg",
+      "imageAlt": "Claudia Alejandra Villani Florez",
+      "roles": ["Grado de Jardin", "Universidad del Tolima"],
+      "description": "El ser maestra y hacer parte de una institucion tan hermosa como lo es mi pequeno San Francisco de Asis implica amor, entrega y disposicion; el enfrentarnos dia a dia con el aprendizaje de nuestros ninos y ninas, ver sus progresos y esas caritas llenas de felicidad tras lograr un avance es un gran motivo de inspiracion. Esto es mas que una labor y estamos dejando una huella en los ninos del manana. Formarlos no solo con contenidos educativos sino tambien como ninos capaces de decidir, cuestionar, con principios y llenos de amor es uno de mis principales objetivos. Mi experiencia en Mi Pequeno San Francisco de Asis es un globo de emociones lleno de gratitud y amor."
+    }
+  ]
+}

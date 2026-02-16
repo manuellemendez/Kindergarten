@@ -23,3 +23,21 @@ collections:
               - { label: "Texto", name: "text", widget: "text" }
               - { label: "Imagen", name: "image", widget: "image" }
               - { label: "Texto alternativo", name: "imageAlt", widget: "string", required: false }
+
+      - file: "content/perfiles-escolares.json"
+        label: "Perfil Escolar"
+        name: "perfil_escolar"
+        fields:
+          - label: "Perfiles"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Nombre", name: "name", widget: "string" }
+              - { label: "Imagen", name: "image", widget: "image" }
+              - { label: "Texto alternativo", name: "imageAlt", widget: "string", required: false }
+              - label: "Cargos o estudios"
+                name: "roles"
+                widget: "list"
+                field: { label: "Linea", name: "line", widget: "string" }
+              - { label: "Descripcion", name: "description", widget: "text", required: false }
