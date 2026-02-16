@@ -152,6 +152,114 @@
   background: rgba(255, 255, 255, 0.28);
 }
 
+.video-section-title {
+  color: #1e9b96 !important;
+}
+
+.video-section-subtitle {
+  color: #202020;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 190%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.video-gallery-section {
+  margin-top: 6px;
+  margin-bottom: 32px;
+}
+
+.video-carousel {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.video-slide-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.18);
+}
+
+.video-slide {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  background: #000;
+}
+
+.video-caption {
+  padding: 16px 18px 18px;
+  background: linear-gradient(180deg, #fff 0%, #f4fbff 100%);
+  text-align: center;
+}
+
+.video-caption h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #0f4e91;
+}
+
+.video-caption p {
+  margin: 8px 0 0;
+  color: #4f5d75;
+  font-size: 16px;
+}
+
+.video-carousel .carousel-indicators {
+  bottom: -36px;
+}
+
+.video-carousel .carousel-indicators li {
+  width: 11px;
+  height: 11px;
+  margin: 0 5px;
+  border: 0;
+  background: #9fd0ea;
+}
+
+.video-carousel .carousel-indicators .active {
+  background: #2f8fc2;
+}
+
+.video-carousel-control {
+  width: 44px;
+  height: 44px;
+  top: 45%;
+  border-radius: 999px;
+  background: rgba(16, 32, 52, 0.48) !important;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.video-carousel-control.left {
+  left: -56px;
+}
+
+.video-carousel-control.right {
+  right: -56px;
+}
+
+.video-arrow {
+  display: inline-block;
+  color: #fff;
+  font-size: 30px;
+  line-height: 44px;
+}
+
+@media (max-width: 980px) {
+  .video-carousel-control.left {
+    left: 10px;
+  }
+
+  .video-carousel-control.right {
+    right: 10px;
+  }
+}
+
 @media (max-width: 640px) {
   .imagenes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -161,6 +269,18 @@
 
   .JardinFotos1 {
     height: 150px;
+  }
+
+  .video-section-subtitle {
+    font-size: 150%;
+  }
+
+  .video-caption h3 {
+    font-size: 20px;
+  }
+
+  .video-caption p {
+    font-size: 15px;
   }
 }
 

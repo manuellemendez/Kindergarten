@@ -386,16 +386,9 @@
 
       <div id="container" class="backgroundJ">
         <div class="row">
-          <h1 class="nuestropequeño1" style="color: aquamarine">Enseñansas</h1>
+          <h1 class="nuestropequeño1 video-section-title">Enseñanzas</h1>
           <br /><br />
-          <p
-            style="
-              color: black;
-              display: flex;
-              justify-content: center;
-              font-size: 190%;
-            "
-          >
+          <p class="video-section-subtitle">
             A la vanguardia del conocimiento con el trabajo realizado con los
             niños.
           </p>
@@ -403,72 +396,82 @@
           <!--   <div style="display: grid; justify-content: center">
             <img src="assets/animation/responsive.gif" width="140px" />
           </div> -->
-          <div class="container">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="container video-gallery-section">
+            <div
+              id="myCarousel"
+              class="carousel slide video-carousel"
+              data-ride="carousel"
+            >
               <!-- Indicators -->
               <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0"></li>
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
               </ol>
 
               <!-- Wrapper for slides -->
-              <div
-                class="carousel-inner"
-                style="display: flex; justify-content: center"
-              >
+              <div class="carousel-inner">
                 <div class="item active">
-                  <video controls class="d-block w-100" alt="video">
-                    <source
-                      src="assets/videos/VID-20220726-WA0012.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                  <div class="carousel-caption">
-                    <p>Disfrutando momentos</p>
+                  <div class="video-slide-card">
+                    <video controls class="video-slide" aria-label="Video disfrutando momentos">
+                      <source
+                        src="assets/videos/VID-20220726-WA0012.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                    <div class="video-caption">
+                      <h3>Disfrutando Momentos</h3>
+                      <p>Juego libre y socialización con los compañeros.</p>
+                    </div>
                   </div>
                 </div>
 
                 <div class="item">
-                  <video controls class="d-block w-100" alt="video">
-                    <source
-                      src="assets/videos/VID-20220726-WA0006.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                  <div class="carousel-caption">
-                    <p>Aprendizaje didáctico</p>
+                  <div class="video-slide-card">
+                    <video controls class="video-slide" aria-label="Video aprendizaje didáctico">
+                      <source
+                        src="assets/videos/VID-20220726-WA0006.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                    <div class="video-caption">
+                      <h3>Aprendizaje Didáctico</h3>
+                      <p>Actividades guiadas para reforzar habilidades.</p>
+                    </div>
                   </div>
                 </div>
 
                 <div class="item">
-                  <video controls class="d-block w-100" alt="video">
-                    <source
-                      src="assets/videos/VID-20220726-WA0007.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                  <div class="carousel-caption">
-                    <p>Aprendiendo de los animales</p>
+                  <div class="video-slide-card">
+                    <video controls class="video-slide" aria-label="Video aprendiendo de los animales">
+                      <source
+                        src="assets/videos/VID-20220726-WA0007.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                    <div class="video-caption">
+                      <h3>Aprendiendo de los Animales</h3>
+                      <p>Exploración del entorno y reconocimiento del mundo animal.</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <!-- Left and right controls -->
               <a
-                class="left carousel-control"
+                class="left carousel-control video-carousel-control"
                 href="#myCarousel"
                 data-slide="prev"
               >
-                <span class="glyphicon-chevron-left"> < </span>
+                <span class="video-arrow" aria-hidden="true">&#10094;</span>
                 <span class="sr-only">Previous</span>
               </a>
               <a
-                class="right carousel-control"
+                class="right carousel-control video-carousel-control"
                 href="#myCarousel"
                 data-slide="next"
               >
-                <span class="glyphicon-chevron-right">></span>
+                <span class="video-arrow" aria-hidden="true">&#10095;</span>
                 <span class="sr-only">Next</span>
               </a>
             </div>
