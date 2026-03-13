@@ -512,8 +512,10 @@
           <div class="separator separator-danger">∎</div>
         </div>
 
-        <ul class="nav nav-text" role="tablist" id="perfil-escolar-tabs"></ul>
-        <div class="tab-content" id="perfil-escolar-content"></div>
+        <div class="perfil-spotlight-layout">
+          <div class="perfil-sidebar" id="perfil-escolar-tabs"></div>
+          <div class="perfil-spotlight" id="perfil-escolar-content"></div>
+        </div>
       </div>
     </div>
 
@@ -650,77 +652,58 @@
       var tabsContainer = document.getElementById('perfil-escolar-tabs')
       var contentContainer = document.getElementById('perfil-escolar-content')
 
-      function createProfileTab(profile, index) {
-        var tabId = 'perfil-escolar-' + (index + 1)
-        var listItem = document.createElement('li')
-        if (index === 0) {
-          listItem.className = 'active'
-        }
+      function createSidebarItem(profile, index) {
+        var item = document.createElement('div')
+        item.className = 'perfil-sidebar-item' + (index === 0 ? ' active' : '')
 
-        var link = document.createElement('a')
-        link.href = '#' + tabId
-        link.setAttribute('role', 'tab')
-        link.setAttribute('data-toggle', 'tab')
+        var img = document.createElement('img')
+        img.className = 'img-circle perfil-sidebar-avatar'
+        img.src = profile.image || ''
+        img.alt = profile.imageAlt || profile.name || ''
 
-        var imageContainer = document.createElement('div')
-        imageContainer.className = 'image-clients'
-
-        var image = document.createElement('img')
-        image.className = 'img-circle'
-        image.alt = profile.imageAlt || profile.name || 'Perfil escolar'
-        image.src = profile.image || ''
-
-        imageContainer.appendChild(image)
-        link.appendChild(imageContainer)
-        listItem.appendChild(link)
-
-        return {
-          tabId: tabId,
-          element: listItem,
-        }
-      }
-
-      function createRoleLine(text) {
-        var role = document.createElement('li')
-        role.style.color = '#383aac'
-        role.style.fontFamily = 'schoolbell, cursive'
-        role.style.fontSize = '20px'
-        role.textContent = text
-        return role
-      }
-
-      function createProfilePane(profile, index, tabId) {
-        var pane = document.createElement('div')
-        pane.className = index === 0 ? 'tab-pane active' : 'tab-pane'
-        pane.id = tabId
-
-        var name = document.createElement('h4')
-        name.style.fontFamily = 'schoolbell, cursive'
-        name.style.fontSize = '25px'
-        name.style.marginBottom = '10px'
+        var name = document.createElement('span')
+        name.className = 'perfil-sidebar-name'
         name.textContent = profile.name || ''
 
-        pane.appendChild(name)
+        item.appendChild(img)
+        item.appendChild(name)
+        return item
+      }
+
+      function showSpotlight(profile) {
+        contentContainer.innerHTML = ''
+
+        var img = document.createElement('img')
+        img.className = 'img-circle perfil-spotlight-avatar'
+        img.src = profile.image || ''
+        img.alt = profile.imageAlt || profile.name || ''
+
+        var info = document.createElement('div')
+        info.className = 'perfil-spotlight-info'
+
+        var name = document.createElement('h3')
+        name.className = 'perfil-spotlight-name'
+        name.textContent = profile.name || ''
+        info.appendChild(name)
 
         if (Array.isArray(profile.roles)) {
-          profile.roles
-            .filter(function (role) {
-              return role
-            })
-            .forEach(function (roleText) {
-              pane.appendChild(createRoleLine(roleText))
-            })
+          profile.roles.filter(Boolean).forEach(function (roleText) {
+            var role = document.createElement('p')
+            role.className = 'perfil-spotlight-role'
+            role.textContent = roleText
+            info.appendChild(role)
+          })
         }
 
-        var spacer = document.createElement('br')
-        pane.appendChild(spacer)
+        if (profile.description) {
+          var desc = document.createElement('p')
+          desc.className = 'description perfil-spotlight-desc'
+          desc.textContent = profile.description
+          info.appendChild(desc)
+        }
 
-        var description = document.createElement('p')
-        description.className = 'description'
-        description.textContent = profile.description || ''
-        pane.appendChild(description)
-
-        return pane
+        contentContainer.appendChild(img)
+        contentContainer.appendChild(info)
       }
 
       function renderProfiles(profiles) {
@@ -736,13 +719,24 @@
           return
         }
 
+        function selectProfile(index) {
+          var items = tabsContainer.querySelectorAll('.perfil-sidebar-item')
+          items.forEach(function (item, i) {
+            item.className =
+              'perfil-sidebar-item' + (i === index ? ' active' : '')
+          })
+          showSpotlight(profiles[index])
+        }
+
         profiles.forEach(function (profile, index) {
-          var tab = createProfileTab(profile, index)
-          tabsContainer.appendChild(tab.element)
-          contentContainer.appendChild(
-            createProfilePane(profile, index, tab.tabId),
-          )
+          var item = createSidebarItem(profile, index)
+          item.addEventListener('click', function () {
+            selectProfile(index)
+          })
+          tabsContainer.appendChild(item)
         })
+
+        showSpotlight(profiles[0])
       }
 
       if (!tabsContainer || !contentContainer) {
