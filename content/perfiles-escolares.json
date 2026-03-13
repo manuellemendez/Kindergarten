@@ -4,7 +4,10 @@
       "name": "Diana Granada Wilquin",
       "image": "/assets/img/faces/Diana.jpg",
       "imageAlt": "Diana Granada Wilquin",
-      "roles": ["Administradora", "Normalista"],
+      "roles": [
+        "Administradora",
+        "Normalista"
+      ],
       "description": ""
     },
     {
@@ -16,7 +19,7 @@
         "Fundacion Universitaria del Area Andina",
         "Docente del Grado parvulos"
       ],
-      "description": "Soy Luz Dary Santos Riano Docente en esta hermosa institucion educativa la cual me hace inmensamente feliz y me ayuda cada dia a crecer profesional y emocionalmente, el compromiso, el esfuerzo, el afecto y el carino con sus docentes, ninos, ninas y padres de familia es maravilloso y es asi como ver a mis pequenos gigantes cada manana me llena de emocion, alegria, y energia, me llena de halagos el ensenar a esos pequenos que se alegran tanto al verte llegar, me impregna todo ese amor y afecto, lo cual me lleva a dar lo mejor de mi para ellos siempre. Agradezco a esta hermosa institucion y todo el equipo de trabajo por cada oportunidad de compartir y aprender junto con los ninos y ninas, para mi es algo que me satisface, enorgullece y enriquece mi labor de desarrollo profesional docente."
+      "description": "Soy Luz Dary Santos Riaño Docente en esta hermosa institución educativa la cual me hace inmensamente feliz y me ayuda cada día a crecer profesional y emocionalmente, el compromiso, el esfuerzo, el afecto y el cariño con sus docentes, niños, niñas y padres de familia es maravilloso y es así como ver a mis pequeños gigantes cada mañana me llena de emoción, alegría, y energía, me llena de halagos el ensenar a esos pequeños que se alegran tanto al verte llegar, me impregna todo ese amor y afecto, lo cual me lleva a dar lo mejor de mi para ellos siempre. Agradezco a esta hermosa institución y todo el equipo de trabajo por cada oportunidad de compartir y aprender junto con los niños y niñas, para mi es algo que me satisface, enorgullece y enriquece mi labor de desarrollo profesional docente."
     },
     {
       "name": "Blanca Nubia Gomez Sanchez",
@@ -32,7 +35,10 @@
       "name": "Claudia Alejandra Villani Florez",
       "image": "/assets/img/faces/Claudia.jpg",
       "imageAlt": "Claudia Alejandra Villani Florez",
-      "roles": ["Grado de Jardin", "Universidad del Tolima"],
+      "roles": [
+        "Grado de Jardin",
+        "Universidad del Tolima"
+      ],
       "description": "El ser maestra y hacer parte de una institucion tan hermosa como lo es mi pequeno San Francisco de Asis implica amor, entrega y disposicion; el enfrentarnos dia a dia con el aprendizaje de nuestros ninos y ninas, ver sus progresos y esas caritas llenas de felicidad tras lograr un avance es un gran motivo de inspiracion. Esto es mas que una labor y estamos dejando una huella en los ninos del manana. Formarlos no solo con contenidos educativos sino tambien como ninos capaces de decidir, cuestionar, con principios y llenos de amor es uno de mis principales objetivos. Mi experiencia en Mi Pequeno San Francisco de Asis es un globo de emociones lleno de gratitud y amor."
     }
   ]
