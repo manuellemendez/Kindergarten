@@ -57,6 +57,7 @@
       href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap"
       rel="stylesheet"
     />
+    <link href="assets/css/noticias.css" rel="stylesheet" />
   </head>
   <body style="background-color: floralwhite">
     <nav
@@ -203,57 +204,28 @@
         <!-- /.navbar-collapse -->
       </div>
     </nav>
-    <br /><br /><br /><br />
-
-    <section>
-      <div
-        class="jumbotron jumbotron-fluid text-center NoticiaFoto"
-        style="
-          background-image: url(https://images.pexels.com/photos/1329308/pexels-photo-1329308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-        "
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <h2 class="Letrero">Noticias & Eventos</h2>
-              <img src="" />
-            </div>
-          </div>
+    <!-- ===== HERO ===== -->
+    <section class="news-hero">
+      <div class="news-hero-overlay">
+        <div class="news-hero-content">
+          <h1 class="news-hero-title">Noticias &amp; Eventos</h1>
+          <p class="news-hero-sub">
+            Mantente al tanto de todo lo que sucede en nuestro jardín
+          </p>
         </div>
       </div>
     </section>
-    <br />
 
-    <div id="nave1">
-      <img
-        src="assets/img/pluto-success-1.png"
-        alt="Imagen nave"
-        height="170px"
-        width="170px"
-      />
-    </div>
-
-    <div id="nave2">
-      <img
-        src="assets/img/pluto-page-under-construction.png"
-        alt="Imagen nave"
-        height="170px"
-        width="170px"
-      />
-    </div>
-
-    <div id="nave">
-      <img
-        src="assets/img/pluto-searching.png"
-        alt="Imagen nave"
-        height="170px"
-        width="170px"
-      />
-    </div>
-    <div class="container">
-      <div id="noticias-list" class="card-group vgr-cards"></div>
-    </div>
-    <br />
+    <!-- ===== NEWS SECTION ===== -->
+    <section class="news-section">
+      <div class="container">
+        <div class="news-section-header">
+          <h2>Últimas Noticias</h2>
+          <div class="news-divider"></div>
+        </div>
+        <div id="noticias-list" class="news-grid"></div>
+      </div>
+    </section>
 
     <!-- <div class="card">
         <div class="card-img-body">
@@ -394,40 +366,40 @@
       var footerMaxItems = 3
       var footerPreviewLength = 115
 
-      function createCard(item) {
-        var card = document.createElement('div')
-        card.className = 'card'
+      function createCard(item, index) {
+        var card = document.createElement('article')
+        card.className = 'news-card'
+        card.style.animationDelay = index * 0.12 + 's'
 
-        var cardImageBody = document.createElement('div')
-        cardImageBody.className = 'card-img-body'
-
+        // Image
+        var imgWrap = document.createElement('div')
+        imgWrap.className = 'news-card-img-wrap'
         var image = document.createElement('img')
-        image.className = 'card-img'
         image.src = item.image
         image.alt = item.imageAlt || item.title || 'Noticia'
-        cardImageBody.appendChild(image)
+        imgWrap.appendChild(image)
 
+        // Color accent bar
+        var accent = document.createElement('div')
+        accent.className = 'news-card-accent'
+        accent.style.background = item.titleColor || '#ff8c00'
+
+        // Card body
         var cardBody = document.createElement('div')
-        cardBody.className = 'card-body'
+        cardBody.className = 'news-card-body'
 
-        var title = document.createElement('h4')
-        title.className = 'card-title'
-        title.style.padding = '15px'
-        title.style.fontSize = '25px'
-        title.style.color = item.titleColor || '#333'
+        var title = document.createElement('h3')
+        title.className = 'news-card-title'
         title.textContent = item.title || ''
 
         var text = document.createElement('p')
-        text.className = 'card-text'
-        text.style.color = 'black'
-        text.style.fontSize = '21px'
-        text.style.padding = '19.5px'
-        text.style.textAlign = 'justify'
+        text.className = 'news-card-text'
         text.textContent = item.text || ''
 
         cardBody.appendChild(title)
         cardBody.appendChild(text)
-        card.appendChild(cardImageBody)
+        card.appendChild(imgWrap)
+        card.appendChild(accent)
         card.appendChild(cardBody)
 
         return card
@@ -452,15 +424,16 @@
         noticiasList.innerHTML = ''
 
         if (!Array.isArray(items) || !items.length) {
-          var emptyMessage = document.createElement('p')
-          emptyMessage.textContent =
-            'No hay noticias publicadas en este momento.'
-          noticiasList.appendChild(emptyMessage)
+          var emptyDiv = document.createElement('div')
+          emptyDiv.className = 'news-empty'
+          emptyDiv.innerHTML =
+            '<span class="news-empty-icon">📋</span>No hay noticias publicadas en este momento.'
+          noticiasList.appendChild(emptyDiv)
           return
         }
 
-        items.forEach(function (item) {
-          noticiasList.appendChild(createCard(item))
+        items.forEach(function (item, index) {
+          noticiasList.appendChild(createCard(item, index))
         })
       }
 
