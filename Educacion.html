@@ -48,6 +48,140 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/Mobileapp.css" />
+    <style>
+      .edu-grade-card {
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      .edu-grade-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28) !important;
+      }
+      .edu-grade-card .edu-front {
+        transition: opacity 0.35s ease;
+      }
+      .edu-grade-card .edu-back {
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
+      .edu-grade-card:hover .edu-front {
+        opacity: 0;
+      }
+      .edu-grade-card:hover .edu-back {
+        opacity: 1;
+      }
+
+      /* Grade Modal */
+      #grade-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      #grade-modal-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+      #grade-modal-box {
+        position: relative;
+        width: 90%;
+        max-width: 460px;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+        transform: scale(0.85) translateY(30px);
+        transition:
+          transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+          opacity 0.3s ease;
+        opacity: 0;
+      }
+      #grade-modal-overlay.active #grade-modal-box {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+      #grade-modal-img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+      #grade-modal-img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 220px;
+        background: linear-gradient(
+          to bottom,
+          transparent 40%,
+          rgba(0, 0, 0, 0.45) 100%
+        );
+      }
+      #grade-modal-body {
+        padding: 28px 32px 36px;
+        background: #fff;
+      }
+      #grade-modal-age {
+        display: inline-block;
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        padding: 4px 14px;
+        border-radius: 20px;
+        letter-spacing: 1px;
+        color: #fff;
+        margin-bottom: 14px;
+      }
+      #grade-modal-title {
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 1.7em;
+        color: #222;
+        margin: 0 0 10px;
+      }
+      #grade-modal-divider {
+        width: 50px;
+        height: 4px;
+        border-radius: 10px;
+        margin: 0 0 16px;
+      }
+      #grade-modal-desc {
+        font-family: schoolbell, cursive;
+        font-size: 18px;
+        color: #555;
+        line-height: 1.7;
+        margin: 0;
+      }
+      #grade-modal-close {
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        background: rgba(0, 0, 0, 0.38);
+        border: none;
+        color: #fff;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        font-size: 18px;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+        z-index: 1;
+      }
+      #grade-modal-close:hover {
+        background: rgba(0, 0, 0, 0.62);
+      }
+    </style>
   </head>
   <body>
     <nav
@@ -195,152 +329,178 @@
     </nav>
     <div class="section" id="imagendefondo">
       <div class="container">
-        <div class="row">
-          <div class="title-area">
-            <br /><br />
-            <h1 class="letra">
-              Nuestra
-              <main>
-                <section>
-                  <p class="textosalto">
-                    Educac<!--This comment is required to remove whitespace created by inline-block elements.
-         --><span>
-                      <span class="stack bouncing">.</span>
-                      <span class="stack">ı</span> </span
-                    ><!--This comment is required to remove whitespace created by inline-block elements.
-         -->ón
-                  </p>
-                </section>
-              </main>
-            </h1>
-            <div class="separator separator-danger">✻</div>
-            <p class="description">
-              En cada nivel dependiendo de la edad buscamos generar experiencias
-              significativas que permiten en nuestros niños y niñas desarrollar
-              competencias para resolver problemas sencillos, a través del
-              desarrollo de estructuras mentales. Todo esto lo hacemos a través
-              de la implementación de una metodología lúdica por niveles.
-
-              <li class="textoE">
-                Prepararse para interactuar en los grupos sociales a los que
-                pertenecen.
-              </li>
-
-              <li class="textoE">
-                Acercarse al idioma inglés, apropiando estructuras propias de la
-                lengua.
-              </li>
-
-              <li class="textoE">
-                Desarrollar manejo de su cuerpo, afianzando imagen corporal y
-                auto-concepto para consolidar su autoestima, la seguridad y la
-                autoconfianza.
-              </li>
+        <div
+          class="row"
+          style="
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 40px 0;
+          "
+        >
+          <!-- Left: Title & Intro -->
+          <div class="col-md-5" style="padding: 30px 20px">
+            <p
+              style="
+                font-family: Schoolbell, cursive;
+                font-size: 16px;
+                color: #e95b4e;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+              "
+            >
+              🌱 Mi Pequeño San Francisco
             </p>
+            <h1
+              style="
+                font-family: Poppins, sans-serif;
+                font-size: 3em;
+                font-weight: 700;
+                color: #222;
+                line-height: 1.1;
+                margin-bottom: 20px;
+              "
+            >
+              Nuestra<br /><span style="color: #e95b4e">Educación</span>
+            </h1>
+            <p
+              style="
+                font-family: schoolbell, cursive;
+                font-size: 20px;
+                color: #555;
+                line-height: 1.7;
+                margin-bottom: 25px;
+              "
+            >
+              En cada nivel generamos experiencias significativas que
+              desarrollan competencias a través de una
+              <strong>metodología lúdica</strong> pensada para cada edad.
+            </p>
+            <div
+              style="
+                width: 60px;
+                height: 5px;
+                background: #e95b4e;
+                border-radius: 10px;
+              "
+            ></div>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="team" id="team">
-      <br /><br /><br />
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card card-member" id="background-education">
-                <div class="content">
-                  <div class="avatar avatar-danger">
-                    <img
-                      alt="Imagen"
-                      class="img-circle"
-                      src="assets/img/faces/IMG-20200213-WA0001.jpg"
-                    />
-                  </div>
-
-                  <div class="description">
-                    <h3 class="title" style="color: #066ab6">Caminantes</h3>
-                    <p class="small-text">
-                      <i class="fa fa-child"></i>Edad 1 Año
-                    </p>
-                    <p class="description">
-                      En este grado se encuentran los niños y niñas de uno a dos
-                      años, edad adecuada para cultivar con igual dedicación y
-                      esmero todo y cada una de las partes constitutivas del
-                      ser: físico, afectivo e intelectual. Así mismo se
-                      incrementan las competencias cognitivas sociales,
-                      corporales y afectivas, proporcionándoles un espacio donde
-                      tendrán la posibilidad de aprender, interactuar y
-                      fortalecer el desarrollo de su lenguaje, se inicia el
-                      control de esfínteres aspecto importante para el
-                      desarrollo de la independencia y auto cuidado de los niños
-                      y niñas de esta edad.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
+          <!-- Right: Feature Cards -->
+          <div class="col-md-7" style="padding: 30px 20px">
+            <div style="display: flex; flex-direction: column; gap: 18px">
               <div
-                class="card card-member Mobilecard"
-                id="background-education1"
+                style="
+                  background: #fff;
+                  border-radius: 20px;
+                  padding: 22px 26px;
+                  display: flex;
+                  align-items: center;
+                  gap: 18px;
+                  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                  border-left: 5px solid #f9a825;
+                "
               >
-                <div class="content">
-                  <div class="avatar avatar-danger">
-                    <img
-                      alt="Imagen"
-                      class="img-circle"
-                      src="assets/img/faces/IMG-20200212-WA0007.jpg"
-                    />
-                  </div>
-                  <div class="description">
-                    <h3 class="title" style="color: #9a71cd">Párvulos</h3>
-                    <p class="small-text">
-                      <i class="fa fa-child"></i> Edad 2 Años
-                    </p>
-                    <br /><br />
-                    <p class="description" style="margin-top: -24px">
-                      En el grado de párvulos los niños y niñas inician procesos
-                      cognitivos y a su vez facetas de independencia, buscando
-                      potencializar el desarrollo del pensamiento, vivenciando
-                      espacios de estimulación y experiencias vivenciales,
-                      permitiéndolos explorar, curiosear, e indagar; así mismo A
-                      través del aspecto afectivo se favorecen sus relaciones
-                      sociales y la estabilidad emocional de las niñas y los
-                      niños ; trabajando el aspecto psicomotor favorecemos la
-                      estabilidad, desenvolvimiento v contacto con el mundo
-                      exterior.
-                    </p>
-                  </div>
+                <div style="font-size: 38px">🤝</div>
+                <div>
+                  <h4
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-weight: 700;
+                      color: #333;
+                      margin: 0 0 5px;
+                    "
+                  >
+                    Social
+                  </h4>
+                  <p
+                    style="
+                      font-family: schoolbell, cursive;
+                      font-size: 17px;
+                      color: #666;
+                      margin: 0;
+                    "
+                  >
+                    Prepararse para interactuar en los grupos sociales a los que
+                    pertenecen.
+                  </p>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-member" id="background-education2">
-                <div class="content">
-                  <div class="avatar avatar-danger">
-                    <img
-                      alt="Imagen"
-                      class="img-circle"
-                      src="assets/img/faces/IMG-20200212-WA0002.jpg"
-                    />
-                  </div>
-                  <div class="description">
-                    <h3 class="title" style="color: #3fd428">Pre-Jardín</h3>
-                    <p class="small-text">
-                      <i class="fa fa-child"></i>Edad 3 Años
-                    </p>
-                    <p class="description" style="margin-bottom: 9px">
-                      Este nivel es el punto de partida de la educación
-                      preescolar formal, se encuentran niños niñas de tres años.
-                      Aquí se fortalecen los procesos cognitivos y las destrezas
-                      psicomotoras favoreciendo el aprendizaje significativo de
-                      nuevos conceptos en áreas específicas como pre
-                      matemáticas, percepción y lecto-escritura.
-                    </p>
-                    <br /><br /><br /><br />
-                  </div>
+
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 20px;
+                  padding: 22px 26px;
+                  display: flex;
+                  align-items: center;
+                  gap: 18px;
+                  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                  border-left: 5px solid #42a5f5;
+                "
+              >
+                <div style="font-size: 38px">🌍</div>
+                <div>
+                  <h4
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-weight: 700;
+                      color: #333;
+                      margin: 0 0 5px;
+                    "
+                  >
+                    Inglés
+                  </h4>
+                  <p
+                    style="
+                      font-family: schoolbell, cursive;
+                      font-size: 17px;
+                      color: #666;
+                      margin: 0;
+                    "
+                  >
+                    Acercarse al idioma inglés, apropiando estructuras propias
+                    de la lengua.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 20px;
+                  padding: 22px 26px;
+                  display: flex;
+                  align-items: center;
+                  gap: 18px;
+                  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                  border-left: 5px solid #66bb6a;
+                "
+              >
+                <div style="font-size: 38px">🤸</div>
+                <div>
+                  <h4
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-weight: 700;
+                      color: #333;
+                      margin: 0 0 5px;
+                    "
+                  >
+                    Cuerpo & Autoestima
+                  </h4>
+                  <p
+                    style="
+                      font-family: schoolbell, cursive;
+                      font-size: 17px;
+                      color: #666;
+                      margin: 0;
+                    "
+                  >
+                    Desarrollar el manejo del cuerpo, afianzando imagen corporal
+                    y autoconfianza.
+                  </p>
                 </div>
               </div>
             </div>
@@ -349,70 +509,666 @@
       </div>
     </div>
 
-    <div class="team" id="team">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card card-member" id="background-education3">
-                <div class="content">
-                  <div class="avatar avatar-danger">
-                    <img
-                      alt="Imagen"
-                      class="img-circle"
-                      src="assets/img/faces/IMG-20200212-WA0004.jpg"
-                    />
-                  </div>
-                  <div class="description">
-                    <h3 class="title" style="color: #c03af0">Jardín</h3>
-                    <p class="small-text">
-                      <i class="fa fa-child"></i> Edad 4 Años
-                    </p>
-                    <p class="description">
-                      El grado de jardín es un mundo de descubrimiento, ya que
-                      inician una importante transformación basada en los logros
-                      obtenidos de los procesos de los niveles anteriores, los
-                      niños y las niñas empiezan ejerces la independencia,
-                      liderazgo, solidaridad, siendo guiados a cimentar su
-                      personalidad fortaleciendo el desarrollo socio afectivo,
-                      logrando que se desarrolle siendo un niño o una niña
-                      integra y feliz, también iniciamos los procesos de
-                      trascripción, escritura y lectura de una manera lúdica y
-                      vivencial.
-                    </p>
-                  </div>
-                </div>
-              </div>
+    <!-- Grades Section - Magazine Style Cards -->
+    <div style="background: #f7f8fc; padding: 60px 0">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 40px">
+          <h2
+            style="
+              font-family: Poppins, sans-serif;
+              font-weight: 700;
+              color: #222;
+              font-size: 2.2em;
+              margin-bottom: 8px;
+            "
+          >
+            Nuestros Niveles
+          </h2>
+          <p
+            style="
+              font-family: schoolbell, cursive;
+              font-size: 19px;
+              color: #777;
+            "
+          >
+            Un camino de aprendizaje pensado para cada etapa
+          </p>
+          <div
+            style="
+              width: 50px;
+              height: 4px;
+              background: #e95b4e;
+              border-radius: 10px;
+              margin: 12px auto 0;
+            "
+          ></div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+          "
+        >
+          <!-- Caminantes -->
+          <div
+            class="edu-grade-card"
+            onclick="openGradeModal(this)"
+            data-title="Caminantes"
+            data-age="1 AÑO"
+            data-color="#066ab6"
+            data-desc="Cultivamos el desarrollo físico, afectivo e intelectual, fortaleciendo el lenguaje y la independencia de los más pequeños. En este nivel los niños descubren el mundo a través del movimiento, el juego y la exploración sensorial, construyendo los cimientos de su desarrollo integral."
+            data-img="https://images.pexels.com/photos/286559/pexels-photo-286559.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            style="
+              position: relative;
+              flex: 1;
+              min-width: 170px;
+              max-width: 210px;
+              height: 360px;
+              border-radius: 22px;
+              overflow: hidden;
+              cursor: pointer;
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+              background-image: url(https://images.pexels.com/photos/286559/pexels-photo-286559.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  to top,
+                  #066ab6cc 45%,
+                  transparent 100%
+                );
+              "
+            ></div>
+            <div
+              style="
+                position: absolute;
+                top: 14px;
+                left: 14px;
+                background: #066ab6;
+                color: #fff;
+                font-family: Poppins, sans-serif;
+                font-weight: 700;
+                font-size: 12px;
+                padding: 4px 12px;
+                border-radius: 20px;
+                letter-spacing: 1px;
+              "
+            >
+              1 AÑO
             </div>
-            <div class="col-md-4">
-              <div class="card card-member" id="background-education4">
-                <div class="content">
-                  <div class="avatar avatar-danger">
-                    <img
-                      alt="Imagen"
-                      class="img-circle"
-                      src="assets/img/faces/G-20200213-WA0002.jpg"
-                    />
-                  </div>
-                  <div class="description">
-                    <h3 class="title" style="color: #66bfe9">Transición</h3>
-                    <p class="small-text">
-                      <i class="fa fa-child"></i>Edad 5 Años
-                    </p>
-                    <p class="description" style="margin-bottom: 30px">
-                      Los niños y las niñas en el grado de transición tendrán el
-                      placer de complementar los procesos abordados durante el
-                      transcurso de los niveles anteriores, continuando con
-                      fortalecimiento de las dimensiones del desarrollo
-                      cognitivo a través de la matemática, el inglés, la lectura
-                      y la escritura, vivenciando experiencias significativas,
-                      que les posibilite conocimientos, interacciones y
-                      aprendizajes lúdicos.
-                    </p>
-                    <br />
-                  </div>
-                </div>
-              </div>
+            <div
+              class="edu-front"
+              style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                color: #fff;
+              "
+            >
+              <h3
+                style="
+                  font-family: Poppins, sans-serif;
+                  font-weight: 700;
+                  font-size: 1.25em;
+                  margin: 0 0 4px;
+                "
+              >
+                Caminantes
+              </h3>
+              <p
+                style="
+                  font-family: schoolbell, cursive;
+                  font-size: 13px;
+                  margin: 0;
+                  opacity: 0.8;
+                "
+              >
+                Pasa el cursor para saber más ↑
+              </p>
+            </div>
+            <div
+              class="edu-back"
+              style="
+                position: absolute;
+                inset: 0;
+                background: #066ab6ee;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 22px;
+              "
+            >
+              <h3
+                style="
+                  font-family: Poppins, sans-serif;
+                  font-weight: 700;
+                  font-size: 1.1em;
+                  color: #fff;
+                  margin: 0 0 10px;
+                "
+              >
+                Caminantes
+              </h3>
+              <p
+                style="
+                  font-family: schoolbell, cursive;
+                  font-size: 15px;
+                  color: #fff;
+                  text-align: center;
+                  margin: 0;
+                  line-height: 1.6;
+                "
+              >
+                Cultivamos el desarrollo físico, afectivo e intelectual,
+                fortaleciendo el lenguaje y la independencia de los más
+                pequeños.
+              </p>
+            </div>
+          </div>
+
+          <!-- Párvulos -->
+          <div
+            class="edu-grade-card"
+            onclick="openGradeModal(this)"
+            data-title="Párvulos"
+            data-age="2 AÑOS"
+            data-color="#9a71cd"
+            data-desc="Potenciamos el pensamiento, la exploración y la estabilidad emocional a través de experiencias vivenciales. Los niños desarrollan su curiosidad natural, aprenden a expresarse y a relacionarse con sus pares en un ambiente lleno de creatividad y afecto."
+            data-img="https://images.pexels.com/photos/965120/pexels-photo-965120.jpeg?cs=srgb&dl=pink-and-two-yellow-pineapple-erasers-965120.jpg&fm=jpg"
+            style="
+              position: relative;
+              flex: 1;
+              min-width: 170px;
+              max-width: 210px;
+              height: 360px;
+              border-radius: 22px;
+              overflow: hidden;
+              cursor: pointer;
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+              background-image: url(https://images.pexels.com/photos/965120/pexels-photo-965120.jpeg?cs=srgb&dl=pink-and-two-yellow-pineapple-erasers-965120.jpg&fm=jpg);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  to top,
+                  #9a71cdcc 45%,
+                  transparent 100%
+                );
+              "
+            ></div>
+            <div
+              style="
+                position: absolute;
+                top: 14px;
+                left: 14px;
+                background: #9a71cd;
+                color: #fff;
+                font-family: Poppins, sans-serif;
+                font-weight: 700;
+                font-size: 12px;
+                padding: 4px 12px;
+                border-radius: 20px;
+                letter-spacing: 1px;
+              "
+            >
+              2 AÑOS
+            </div>
+            <div
+              class="edu-front"
+              style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                color: #fff;
+              "
+            >
+              <h3
+                style="
+                  font-family: Poppins, sans-serif;
+                  font-weight: 700;
+                  font-size: 1.25em;
+                  margin: 0 0 4px;
+                "
+              >
+                Párvulos
+              </h3>
+              <p
+                style="
+                  font-family: schoolbell, cursive;
+                  font-size: 13px;
+                  margin: 0;
+                  opacity: 0.8;
+                "
+              >
+                Pasa el cursor para saber más ↑
+              </p>
+            </div>
+            <div
+              class="edu-back"
+              style="
+                position: absolute;
+                inset: 0;
+                background: #9a71cdee;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 22px;
+              "
+            >
+              <h3
+                style="
+                  font-family: Poppins, sans-serif;
+                  font-weight: 700;
+                  font-size: 1.1em;
+                  color: #fff;
+                  margin: 0 0 10px;
+                "
+              >
+                Párvulos
+              </h3>
+              <p
+                style="
+                  font-family: schoolbell, cursive;
+                  font-size: 15px;
+                  color: #fff;
+                  text-align: center;
+                  margin: 0;
+                  line-height: 1.6;
+                "
+              >
+                Potenciamos el pensamiento, la exploración y la estabilidad
+                emocional a través de experiencias vivenciales.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pre-Jardín -->
+          <div
+            class="edu-grade-card"
+            onclick="openGradeModal(this)"
+            data-title="Pre-Jardín"
+            data-age="3 AÑOS"
+            data-color="#3ab826"
+            data-desc="El inicio de la educación preescolar formal: pre-matemáticas, percepción y lecto-escritura de forma significativa. Los niños comienzan a comprender conceptos lógicos y a desarrollar habilidades comunicativas esenciales para su vida escolar."
+            data-img="https://images.pexels.com/photos/2044167/pexels-photo-2044167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            style="
+              position: relative;
+              flex: 1;
+              min-width: 170px;
+              max-width: 210px;
+              height: 360px;
+              border-radius: 22px;
+              overflow: hidden;
+              cursor: pointer;
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+              background-image: url(https://images.pexels.com/photos/2044167/pexels-photo-2044167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  to top,
+                  #3ab826cc 45%,
+                  transparent 100%
+                );
+              "
+            ></div>
+            <div
+              style="
+                position: absolute;
+                top: 14px;
+                left: 14px;
+                background: #3fd428;
+                color: #fff;
+                font-family: Poppins, sans-serif;
+                font-weight: 700;
+                font-size: 12px;
+                padding: 4px 12px;
+                border-radius: 20px;
+                letter-spacing: 1px;
+              "
+            >
+              3 AÑOS
+            </div>
+            <div
+              class="edu-front"
+              style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                color: #fff;
+              "
+            >
+              <h3
+                style="
+                  font-family: Poppins, sans-serif;
+                  font-weight: 700;
+                  font-size: 1.25em;
+                  margin: 0 0 4px;
+                "
+              >
+                Pre-Jardín
+              </h3>
+              <p
+                style="
+                  font-family: schoolbell, cursive;
+                  font-size: 13px;
+                  margin: 0;
+                  opacity: 0.8;
+                "
+              >
+                Pasa el cursor para saber más ↑
+              </p>
+            </div>
+            <div
+              class="edu-back"
+              style="
+                position: absolute;
+                inset: 0;
+                background: #3ab826ee;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 22px;
+              "
+            >
+              <h3
+                style="
+                  font-family: Poppins, sans-serif;
+                  font-weight: 700;
+                  font-size: 1.1em;
+                  color: #fff;
+                  margin: 0 0 10px;
+                "
+              >
+                Pre-Jardín
+              </h3>
+              <p
+                style="
+                  font-family: schoolbell, cursive;
+                  font-size: 15px;
+                  color: #fff;
+                  text-align: center;
+                  margin: 0;
+                  line-height: 1.6;
+                "
+              >
+                El inicio de la educación preescolar formal: pre-matemáticas,
+                percepción y lecto-escritura de forma significativa.
+              </p>
+            </div>
+          </div>
+
+          <!-- Jardín -->
+          <div
+            class="edu-grade-card"
+            onclick="openGradeModal(this)"
+            data-title="Jardín"
+            data-age="4 AÑOS"
+            data-color="#b030e0"
+            data-desc="Un mundo de descubrimiento: los niños forjan su personalidad, independencia y liderazgo de forma lúdica. Desarrollan habilidades sociales y cognitivas a través de proyectos creativos, el juego cooperativo y el acercamiento al arte y la música."
+            data-img="https://images.pexels.com/photos/1117543/pexels-photo-1117543.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            style="
+              position: relative;
+              flex: 1;
+              min-width: 170px;
+              max-width: 210px;
+              height: 360px;
+              border-radius: 22px;
+              overflow: hidden;
+              cursor: pointer;
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+              background-image: url(https://images.pexels.com/photos/1117543/pexels-photo-1117543.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  to top,
+                  #b030e0cc 45%,
+                  transparent 100%
+                );
+              "
+            ></div>
+            <div
+              style="
+                position: absolute;
+                top: 14px;
+                left: 14px;
+                background: #c03af0;
+                color: #fff;
+                font-family: Poppins, sans-serif;
+                font-weight: 700;
+                font-size: 12px;
+                padding: 4px 12px;
+                border-radius: 20px;
+                letter-spacing: 1px;
+              "
+            >
+              4 AÑOS
+            </div>
+            <div
+              class="edu-front"
+              style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                color: #fff;
+              "
+            >
+              <h3
+                style="
+                  font-family: Poppins, sans-serif;
+                  font-weight: 700;
+                  font-size: 1.25em;
+                  margin: 0 0 4px;
+                "
+              >
+                Jardín
+              </h3>
+              <p
+                style="
+                  font-family: schoolbell, cursive;
+                  font-size: 13px;
+                  margin: 0;
+                  opacity: 0.8;
+                "
+              >
+                Pasa el cursor para saber más ↑
+              </p>
+            </div>
+            <div
+              class="edu-back"
+              style="
+                position: absolute;
+                inset: 0;
+                background: #b030e0ee;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 22px;
+              "
+            >
+              <h3
+                style="
+                  font-family: Poppins, sans-serif;
+                  font-weight: 700;
+                  font-size: 1.1em;
+                  color: #fff;
+                  margin: 0 0 10px;
+                "
+              >
+                Jardín
+              </h3>
+              <p
+                style="
+                  font-family: schoolbell, cursive;
+                  font-size: 15px;
+                  color: #fff;
+                  text-align: center;
+                  margin: 0;
+                  line-height: 1.6;
+                "
+              >
+                Un mundo de descubrimiento: los niños forjan su personalidad,
+                independencia y liderazgo de forma lúdica.
+              </p>
+            </div>
+          </div>
+
+          <!-- Transición -->
+          <div
+            class="edu-grade-card"
+            onclick="openGradeModal(this)"
+            data-title="Transición"
+            data-age="5 AÑOS"
+            data-color="#2ea8d4"
+            data-desc="El nivel final integra matemáticas, inglés, lectura y escritura con experiencias significativas y lúdicas. Los niños se preparan para la vida escolar con confianza, autonomía y un amor profundo por aprender, listos para dar el gran paso a la primaria."
+            data-img="https://images.pexels.com/photos/860008/pexels-photo-860008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            style="
+              position: relative;
+              flex: 1;
+              min-width: 170px;
+              max-width: 210px;
+              height: 360px;
+              border-radius: 22px;
+              overflow: hidden;
+              cursor: pointer;
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+              background-image: url(https://images.pexels.com/photos/860008/pexels-photo-860008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  to top,
+                  #2ea8d4cc 45%,
+                  transparent 100%
+                );
+              "
+            ></div>
+            <div
+              style="
+                position: absolute;
+                top: 14px;
+                left: 14px;
+                background: #2ea8d4;
+                color: #fff;
+                font-family: Poppins, sans-serif;
+                font-weight: 700;
+                font-size: 12px;
+                padding: 4px 12px;
+                border-radius: 20px;
+                letter-spacing: 1px;
+              "
+            >
+              5 AÑOS
+            </div>
+            <div
+              class="edu-front"
+              style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                color: #fff;
+              "
+            >
+              <h3
+                style="
+                  font-family: Poppins, sans-serif;
+                  font-weight: 700;
+                  font-size: 1.25em;
+                  margin: 0 0 4px;
+                "
+              >
+                Transición
+              </h3>
+              <p
+                style="
+                  font-family: schoolbell, cursive;
+                  font-size: 13px;
+                  margin: 0;
+                  opacity: 0.8;
+                "
+              >
+                Pasa el cursor para saber más ↑
+              </p>
+            </div>
+            <div
+              class="edu-back"
+              style="
+                position: absolute;
+                inset: 0;
+                background: #2ea8d4ee;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 22px;
+              "
+            >
+              <h3
+                style="
+                  font-family: Poppins, sans-serif;
+                  font-weight: 700;
+                  font-size: 1.1em;
+                  color: #fff;
+                  margin: 0 0 10px;
+                "
+              >
+                Transición
+              </h3>
+              <p
+                style="
+                  font-family: schoolbell, cursive;
+                  font-size: 15px;
+                  color: #fff;
+                  text-align: center;
+                  margin: 0;
+                  line-height: 1.6;
+                "
+              >
+                El nivel final integra matemáticas, inglés, lectura y escritura
+                con experiencias significativas y lúdicas.
+              </p>
             </div>
           </div>
         </div>
@@ -425,78 +1181,143 @@
           <div class="separator separator-danger">∎</div>
         </div>
 
-        <ul class="nav nav-text" role="tablist">
-          <li class="active">
-            <a href="#directora" role="tab" data-toggle="tab">
-              <div class="image-clients">
-                <img
-                  alt="Testimonio"
-                  class="img-circle"
-                  id="Directora"
-                  src="assets/img/faces/BlancaCeciliaDirectora.jpg"
-                />
-              </div>
-            </a>
-          </li>
-        </ul>
+        <!-- Profile card -->
+        <div
+          style="
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 32px rgba(56, 58, 172, 0.12);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+          "
+        >
+          <!-- Left: photo + identity -->
+          <div
+            style="
+              flex: 0 0 200px;
+              background: #fef7f4;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              padding: 20px 20px;
+              gap: 10px;
+            "
+          >
+            <img
+              src="assets/img/faces/BlancaCeciliaDirectora.jpg"
+              alt="Blanca Cecilia Varon Molina"
+              style="
+                width: 110px;
+                height: 110px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid rgba(255, 255, 255, 0.5);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+              "
+            />
+            <p
+              style="
+                font-family: schoolbell, cursive;
+                font-size: 28px;
+                color: #383aac;
+                margin: 0;
+                text-align: center;
+                line-height: 1.3;
+              "
+            >
+              Blanca Cecilia<br />Varón Molina
+            </p>
+            <span
+              style="
+                background: #eef0ff;
+                color: #383aac;
+                font-family: schoolbell, cursive;
+                font-size: 17px;
+                padding: 4px 16px;
+                border-radius: 20px;
+                text-align: center;
+              "
+              >Directora Fundadora</span
+            >
+          </div>
 
-        <div class="tab-content">
-          <div class="tab-pane active" id="directora">
-            <ul
+          <!-- Right: credentials + bio -->
+          <div
+            style="
+              flex: 1 1 280px;
+              padding: 20px 28px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              gap: 16px;
+            "
+          >
+            <!-- Credential pills -->
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span
+                style="
+                  background: #eef0ff;
+                  color: #383aac;
+                  font-family: schoolbell, cursive;
+                  font-size: 17px;
+                  padding: 4px 14px;
+                  border-radius: 20px;
+                "
+              >
+                Lic. Universidad del Valle
+              </span>
+              <span
+                style="
+                  background: #eef0ff;
+                  color: #383aac;
+                  font-family: schoolbell, cursive;
+                  font-size: 17px;
+                  padding: 4px 14px;
+                  border-radius: 20px;
+                "
+              >
+                Trabajadora Social
+              </span>
+              <span
+                style="
+                  background: #eef0ff;
+                  color: #383aac;
+                  font-family: schoolbell, cursive;
+                  font-size: 17px;
+                  padding: 4px 14px;
+                  border-radius: 20px;
+                "
+              >
+                +30 años de experiencia
+              </span>
+            </div>
+
+            <!-- Bio -->
+            <p
+              class="description"
               style="
-                font-family: schoolbell, cursive;
-                font-size: 25px;
-                text-align: center;
-              "
-            >
-              Blanca Cecilia Varon Molina
-            </ul>
-            <li
-              style="
-                color: #383aac;
                 font-family: schoolbell, cursive;
                 font-size: 20px;
-                text-align: center;
+                line-height: 1.85;
+                color: #555;
+                margin: 0;
               "
             >
-              Directora
-            </li>
-            <li
-              style="
-                color: #383aac;
-                font-family: schoolbell, cursive;
-                font-size: 20px;
-                text-align: center;
-              "
-            >
-              Licenciada y Trabajadora Social de la Universidad del Valle
-              Directora del jardín mi pequeño San Francisco de Asís
-            </li>
-            <br />
-            <p class="description" id="Directora2">
               Hace 30 años, junto con otras madres de familia de un equipo
               interdisciplinario de profesionales, tuvimos la necesidad de
               encontrar un lugar para educar a nuestros hijos y que llenara
               nuestras expectativas de cuidado, atención, amor, formación en
-              valores y con gran calidad académica. No encontrábamos un lugar
-              para educar a nuestros hijos con instalaciones adecuadas y esas
-              expectativas y como no encontramos un jardín infantil así, pues, …
-              lo creamos. Creamos un jardín infantil en el Barrio San Fernando
-              de la ciudad de Cali, en un buen lugar, lleno de amor y que fuera
-              perfecto para educar a nuestros hijos, que además de lo académico,
-              inculcara en ellos los principios, los valores de nuestras
-              familias y además, que brindara las oportunidades de formación con
-              unas condiciones físicas que fueran acogedoras y llenas de amor.
-              Así nació nuestro pequeño San Francisco de Asís y desde entonces,
-              ha sido el hogar de formación de más de 2.000 niños que
-              aprendieron sus primeras letras en este, su segundo hogar, pero
-              ellos también crecieron en principios, en valores, respeto y amor
-              al otro, desde sus padres, sus maestras hasta sus compañeros. Si,
-              niños que crecieron con una excelente formación, pero más que eso,
-              que crecieron desde su interior con amor, valores y respeto para
-              formar parte de la generación del hoy y del mañana. Si, en este
-              jardín formamos mejores personitas, esas que son nuestros hijos
-              para un mejor futuro. Simplemente eso somos.
+              valores y con gran calidad académica. Como no encontramos ese
+              jardín, lo creamos. Así nació nuestro pequeño San Francisco de
+              Asís — el hogar de formación de más de 2.000 niños que aprendieron
+              sus primeras letras aquí y crecieron en principios, valores,
+              respeto y amor. En este jardín formamos mejores personitas para un
+              mejor futuro.
+              <em>Simplemente eso somos.</em>
             </p>
           </div>
         </div>
@@ -644,6 +1465,24 @@
       </div>
     </footer>
   </body>
+  <!-- Grade Detail Modal -->
+  <div
+    id="grade-modal-overlay"
+    onclick="if (event.target === this) closeGradeModal()"
+  >
+    <div id="grade-modal-box">
+      <button id="grade-modal-close" onclick="closeGradeModal()">✕</button>
+      <img id="grade-modal-img" src="" alt="" />
+      <div id="grade-modal-img-overlay"></div>
+      <div id="grade-modal-body">
+        <span id="grade-modal-age"></span>
+        <h2 id="grade-modal-title"></h2>
+        <div id="grade-modal-divider"></div>
+        <p id="grade-modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/jquery.min.js" type="text/javascript"></script>
   <script src="assets/js/bootstrap.js" type="text/javascript"></script>
   <script type="text/javascript" src="assets/js/modernizr.js"></script>
@@ -759,4 +1598,33 @@
     })()
   </script>
   <script type="text/javascript" src="assets/js/gaia.js"></script>
+  <script>
+    function openGradeModal(card) {
+      var title = card.getAttribute('data-title')
+      var age = card.getAttribute('data-age')
+      var color = card.getAttribute('data-color')
+      var desc = card.getAttribute('data-desc')
+      var img = card.getAttribute('data-img')
+
+      document.getElementById('grade-modal-title').textContent = title
+      document.getElementById('grade-modal-age').textContent = age
+      document.getElementById('grade-modal-age').style.background = color
+      document.getElementById('grade-modal-desc').textContent = desc
+      document.getElementById('grade-modal-img').src = img
+      document.getElementById('grade-modal-img').alt = title
+      document.getElementById('grade-modal-divider').style.background = color
+
+      document.getElementById('grade-modal-overlay').classList.add('active')
+      document.body.style.overflow = 'hidden'
+    }
+
+    function closeGradeModal() {
+      document.getElementById('grade-modal-overlay').classList.remove('active')
+      document.body.style.overflow = ''
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeGradeModal()
+    })
+  </script>
 </html>
