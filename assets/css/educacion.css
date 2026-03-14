@@ -1,0 +1,529 @@
+/* ========================================
+   Educacion Page Styles
+   ======================================== */
+
+/* Grade Cards - Hover Effects */
+.edu-grade-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.edu-grade-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28) !important;
+}
+
+.edu-grade-card .edu-front {
+  transition: opacity 0.35s ease;
+}
+
+.edu-grade-card .edu-back {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.edu-grade-card:hover .edu-front {
+  opacity: 0;
+}
+
+.edu-grade-card:hover .edu-back {
+  opacity: 1;
+}
+
+/* Grade Modal */
+#grade-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#grade-modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#grade-modal-box {
+  position: relative;
+  width: 90%;
+  max-width: 460px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  transform: scale(0.85) translateY(30px);
+  transition:
+    transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.3s ease;
+  opacity: 0;
+}
+
+#grade-modal-overlay.active #grade-modal-box {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+#grade-modal-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+#grade-modal-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}
+
+#grade-modal-body {
+  padding: 28px 32px 36px;
+  background: #fff;
+}
+
+#grade-modal-age {
+  display: inline-block;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+#grade-modal-title {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 1.7em;
+  color: #222;
+  margin: 0 0 10px;
+}
+
+#grade-modal-divider {
+  width: 50px;
+  height: 4px;
+  border-radius: 10px;
+  margin: 0 0 16px;
+}
+
+#grade-modal-desc {
+  font-family: schoolbell, cursive;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+#grade-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.38);
+  border: none;
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 1;
+}
+
+#grade-modal-close:hover {
+  background: rgba(0, 0, 0, 0.62);
+}
+
+/* Section Backgrounds */
+.edu-section-bg {
+  background: #f7f8fc;
+  padding: 60px 0;
+}
+
+/* Hero Section */
+.edu-hero-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.edu-hero-left {
+  padding: 30px 20px;
+}
+
+.edu-hero-subtitle {
+  font-family: Schoolbell, cursive;
+  font-size: 16px;
+  color: #e95b4e;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.edu-hero-title {
+  font-family: Poppins, sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.edu-hero-title-accent {
+  color: #e95b4e;
+}
+
+.edu-hero-description {
+  font-family: schoolbell, cursive;
+  font-size: 20px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.edu-hero-divider {
+  width: 60px;
+  height: 5px;
+  background: #e95b4e;
+  border-radius: 10px;
+}
+
+.edu-hero-right {
+  padding: 30px 20px;
+}
+
+.edu-feature-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.edu-feature-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.edu-feature-card.social {
+  border-left: 5px solid #f9a825;
+}
+
+.edu-feature-card.english {
+  border-left: 5px solid #42a5f5;
+}
+
+.edu-feature-card.body {
+  border-left: 5px solid #66bb6a;
+}
+
+.edu-feature-icon {
+  font-size: 38px;
+}
+
+.edu-feature-title {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 5px;
+}
+
+.edu-feature-desc {
+  font-family: schoolbell, cursive;
+  font-size: 17px;
+  color: #666;
+  margin: 0;
+}
+
+/* Levels Section */
+.edu-levels-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.edu-levels-title {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  color: #222;
+  font-size: 2.2em;
+  margin-bottom: 8px;
+}
+
+.edu-levels-subtitle {
+  font-family: schoolbell, cursive;
+  font-size: 19px;
+  color: #777;
+}
+
+.edu-levels-divider {
+  width: 50px;
+  height: 4px;
+  background: #e95b4e;
+  border-radius: 10px;
+  margin: 12px auto 0;
+}
+
+.edu-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* Individual Grade Card Styles */
+.edu-card-base {
+  position: relative;
+  flex: 1;
+  min-width: 170px;
+  max-width: 210px;
+  height: 360px;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  background-size: cover;
+  background-position: center;
+}
+
+.edu-card-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.edu-card-overlay.caminantes {
+  background: linear-gradient(to top, #066ab6cc 45%, transparent 100%);
+}
+
+.edu-card-overlay.parvulos {
+  background: linear-gradient(to top, #9a71cdcc 45%, transparent 100%);
+}
+
+.edu-card-overlay.prejardin {
+  background: linear-gradient(to top, #3ab826cc 45%, transparent 100%);
+}
+
+.edu-card-overlay.jardin {
+  background: linear-gradient(to top, #b030e0cc 45%, transparent 100%);
+}
+
+.edu-card-overlay.transicion {
+  background: linear-gradient(to top, #2ea8d4cc 45%, transparent 100%);
+}
+
+/* Age Badge Styles */
+.edu-age-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+.edu-age-badge.caminantes {
+  background: #066ab6;
+}
+
+.edu-age-badge.parvulos {
+  background: #9a71cd;
+}
+
+.edu-age-badge.prejardin {
+  background: #3fd428;
+}
+
+.edu-age-badge.jardin {
+  background: #c03af0;
+}
+
+.edu-age-badge.transicion {
+  background: #2ea8d4;
+}
+
+/* Card Front Content */
+.edu-front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  color: #fff;
+}
+
+.edu-front-title {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 1.25em;
+  margin: 0 0 6px;
+}
+
+.edu-front-preview {
+  font-family: schoolbell, cursive;
+  font-size: 14px;
+  margin: 0 0 8px;
+  opacity: 0.95;
+  line-height: 1.4;
+}
+
+.edu-front-hint {
+  font-family: schoolbell, cursive;
+  font-size: 12px;
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* Card Back Content */
+.edu-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+}
+
+.edu-back.caminantes {
+  background: #066ab6ee;
+}
+
+.edu-back.parvulos {
+  background: #9a71cdee;
+}
+
+.edu-back.prejardin {
+  background: #3ab826ee;
+}
+
+.edu-back.jardin {
+  background: #b030e0ee;
+}
+
+.edu-back.transicion {
+  background: #2ea8d4ee;
+}
+
+.edu-back-title {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.edu-back-desc {
+  font-family: schoolbell, cursive;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Director Profile Section */
+.edu-profile-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 32px rgba(56, 58, 172, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edu-profile-left {
+  flex: 0 0 200px;
+  background: #fef7f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
+  gap: 10px;
+}
+
+.edu-profile-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.edu-profile-name {
+  font-family: schoolbell, cursive;
+  font-size: 28px;
+  color: #383aac;
+  margin: 0;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.edu-profile-role {
+  background: #eef0ff;
+  color: #383aac;
+  font-family: schoolbell, cursive;
+  font-size: 17px;
+  padding: 4px 16px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.edu-profile-right {
+  flex: 1 1 280px;
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.edu-profile-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.edu-credential-badge {
+  background: #eef0ff;
+  color: #383aac;
+  font-family: schoolbell, cursive;
+  font-size: 17px;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.edu-profile-bio {
+  font-family: schoolbell, cursive;
+  font-size: 20px;
+  line-height: 1.85;
+  color: #555;
+  margin: 0;
+}

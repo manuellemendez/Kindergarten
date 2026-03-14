@@ -1,0 +1,278 @@
+/* =============================================
+   Modern Navbar — Mi Pequeño San Francisco
+   ============================================= */
+
+/* Body offset so content isn't hidden behind fixed bar */
+body {
+  padding-top: 84px;
+}
+body#home-page {
+  padding-top: 0;
+}
+
+/* Hide the old Bootstrap navbar if somehow still present */
+.navbar {
+  display: none !important;
+}
+
+/* ---- Base ---- */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Transparent hero state (home page only) */
+.site-nav.nav-transparent {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), transparent);
+  box-shadow: none;
+}
+
+.site-nav__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ---- Brand / Logo ---- */
+.site-nav__brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none !important;
+}
+.site-nav__logo {
+  height: 70px;
+  width: auto;
+  display: block;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+.site-nav__brand:hover .site-nav__logo {
+  transform: scale(1.05);
+}
+
+/* ---- Menu container ---- */
+.site-nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- Nav links ---- */
+.site-nav__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.site-nav__link {
+  display: block;
+  padding: 7px 13px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2d2d2d;
+  text-decoration: none !important;
+  border-radius: 8px;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+.site-nav__link:hover,
+.site-nav__link.active {
+  background: #edf9fa;
+  color: #17b8bf;
+  transform: translateY(-1px);
+}
+
+/* Transparent mode: links white */
+.site-nav.nav-transparent .site-nav__link {
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.site-nav.nav-transparent .site-nav__link:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+/* CTA pill */
+.site-nav__link--cta {
+  background: linear-gradient(135deg, #27cfd8 0%, #17b8bf 100%);
+  color: #fff !important;
+  border-radius: 22px;
+  padding: 7px 20px;
+  box-shadow: 0 4px 14px rgba(39, 207, 216, 0.38);
+  text-shadow: none !important;
+}
+.site-nav__link--cta:hover {
+  background: linear-gradient(135deg, #1ab8c0 0%, #10a5ac 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(39, 207, 216, 0.52);
+  transform: translateY(-2px);
+}
+
+/* ---- Social icons ---- */
+.site-nav__social {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 10px;
+  padding-left: 12px;
+  border-left: 1px solid #e0e0e0;
+}
+.site-nav.nav-transparent .site-nav__social {
+  border-left-color: rgba(255, 255, 255, 0.35);
+}
+.site-nav__social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f4f4f4;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+  text-decoration: none !important;
+}
+.site-nav__social-btn:hover {
+  background: #ddf5f6;
+  transform: scale(1.14);
+}
+.site-nav.nav-transparent .site-nav__social-btn {
+  background: rgba(255, 255, 255, 0.2);
+}
+.site-nav.nav-transparent .site-nav__social-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ---- Hamburger ---- */
+.site-nav__hamburger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 4px;
+  transition: background 0.2s ease;
+}
+.site-nav__hamburger:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.site-nav__bar {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: #333;
+  border-radius: 2px;
+  transition:
+    transform 0.32s ease,
+    opacity 0.25s ease;
+}
+.site-nav.nav-transparent .site-nav__bar {
+  background: #fff;
+}
+.site-nav__hamburger.open .site-nav__bar:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.site-nav__hamburger.open .site-nav__bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.site-nav__hamburger.open .site-nav__bar:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 991px) {
+  .site-nav__hamburger {
+    display: flex;
+  }
+  .site-nav__menu {
+    position: absolute;
+    top: 84px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 16px 18px;
+    gap: 2px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
+    border-top: 1px solid #ececec;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      max-height 0.42s ease,
+      opacity 0.3s ease,
+      padding 0.3s ease;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .site-nav__menu.open {
+    max-height: 640px;
+    opacity: 1;
+    pointer-events: auto;
+    padding-top: 10px;
+    padding-bottom: 18px;
+  }
+  .site-nav__links {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 2px;
+  }
+  .site-nav__link {
+    font-size: 14px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .site-nav__link--cta {
+    text-align: center;
+    margin-top: 6px;
+  }
+  .site-nav__social {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+    margin-top: 6px;
+    justify-content: center;
+    width: 100%;
+  }
+}

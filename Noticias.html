@@ -58,150 +58,86 @@
       rel="stylesheet"
     />
     <link href="assets/css/noticias.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
   </head>
   <body style="background-color: floralwhite">
-    <nav
-      class="navbar navbar-default navbar-transparent navbar-fixed-top"
-      id="navbarN"
-      color-on-scroll="200"
-    >
-      <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
-      <div class="container">
-        <div class="navbar-header">
-          <button
-            id="menu-toggle"
-            type="button"
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target="#example"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar bar1"></span>
-            <span class="icon-bar bar2"></span>
-            <span class="icon-bar bar3"></span>
-          </button>
-          <a href="index.html" class="navbar-brand">
-            <div class="Logotipo2">
-              <img
-                src="assets/img/Logotipo/Logotipo.png"
-                alt="Logo"
-                height="194px"
-                width="300px"
-              />
-            </div>
-            Mi Pequeño San Francisco de Asís
-          </a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right navbar-uppercase">
+    <nav class="site-nav" id="mainNav">
+      <div class="site-nav__inner">
+        <a href="index.html" class="site-nav__brand">
+          <img
+            src="assets/img/Logotipo/Logotipo.png"
+            alt="Mi Pequeño San Francisco de Asís"
+            class="site-nav__logo"
+          />
+        </a>
+        <button
+          class="site-nav__hamburger"
+          id="siteNavToggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span class="site-nav__bar"></span>
+          <span class="site-nav__bar"></span>
+          <span class="site-nav__bar"></span>
+        </button>
+        <div class="site-nav__menu" id="siteNavMenu">
+          <ul class="site-nav__links">
+            <li><a href="index.html" class="site-nav__link">Inicio</a></li>
             <li>
-              <a href="#" target="_blank"></a>
-            </li>
-            <li class="dropdown">
-              <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"></i> Dónde Encontrarnos
-              </a>
-              <ul class="dropdown-menu dropdown-danger">
-                <li>
-                  <a
-                    href="https://www.facebook.com/jardininfantilmipequesanfranciscodeasis/"
-                    ><img
-                      src="assets/animation/facebook circled shaket.gif"
-                      alt="animacion"
-                      height="20px"
-                      width="20px"
-                    />
-                    Facebook</a
-                  >
-                </li>
-
-                <li>
-                  <a
-                    href="https://www.instagram.com/mipequenosanfranciscodeasis/"
-                    ><img
-                      src="assets/animation/instagram shot.gif"
-                      alt="animacion"
-                      height="20px"
-                      width="20px"
-                    />
-                    Instagram</a
-                  >
-                </li>
-              </ul>
+              <a href="Educacion.html" class="site-nav__link">Educación</a>
             </li>
             <li>
-              <div class="dropdown">
-                <a
-                  class="btn dropdown-toggle"
-                  data-toggle="dropdown"
-                  style="background-color: white"
-                >
-                  Descubre Más
-                  <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="Extracurricular.html">
-                      <img
-                        src="assets/animation/soccer ball.gif"
-                        alt="animacion"
-                        height="18px"
-                        width="18px"
-                      />
-                      Extracurricular</a
-                    >
-                  </li>
-
-                  <li>
-                    <a href="Educacion.html">
-                      <img
-                        src="assets/animation/book.gif"
-                        alt="animacion"
-                        height="18px"
-                        width="18px"
-                      />
-                      Educación</a
-                    >
-                  </li>
-                  <li>
-                    <a href="Noticias.html">
-                      <img
-                        src="assets/animation/bow.gif"
-                        alt="animacion"
-                        height="18px"
-                        width="18px"
-                      />
-                      Eventos & Noticias</a
-                    >
-                  </li>
-                  <li>
-                    <a href="Jardin-infantil-fotos.html">
-                      <img
-                        src="assets/animation/photo galleryt.gif"
-                        alt="animacion"
-                        height="18px"
-                        width="18px"
-                      />
-                      Fotos</a
-                    >
-                  </li>
-                  <li>
-                    <a href="Contactanos.html">
-                      <img
-                        src="assets/animation/map marker.gif"
-                        alt="animacion"
-                        height="18px"
-                        width="18px"
-                      />
-                      Contactanos</a
-                    >
-                  </li>
-                </ul>
-              </div>
+              <a href="Extracurricular.html" class="site-nav__link"
+                >Extracurricular</a
+              >
+            </li>
+            <li>
+              <a href="Noticias.html" class="site-nav__link"
+                >Eventos &amp; Noticias</a
+              >
+            </li>
+            <li>
+              <a href="Jardin-infantil-fotos.html" class="site-nav__link"
+                >Fotos</a
+              >
+            </li>
+            <li>
+              <a
+                href="Contactanos.html"
+                class="site-nav__link site-nav__link--cta"
+                >Contáctanos</a
+              >
             </li>
           </ul>
+          <div class="site-nav__social">
+            <a
+              href="https://www.facebook.com/jardininfantilmipequesanfranciscodeasis/"
+              target="_blank"
+              class="site-nav__social-btn"
+              aria-label="Facebook"
+            >
+              <img
+                src="assets/animation/facebook circled shaket.gif"
+                alt="Facebook"
+                width="22"
+                height="22"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/mipequenosanfranciscodeasis/"
+              target="_blank"
+              class="site-nav__social-btn"
+              aria-label="Instagram"
+            >
+              <img
+                src="assets/animation/instagram shot.gif"
+                alt="Instagram"
+                width="22"
+                height="22"
+              />
+            </a>
+          </div>
         </div>
-        <!-- /.navbar-collapse -->
       </div>
     </nav>
     <!-- ===== HERO ===== -->
@@ -479,5 +415,6 @@
 
   <!--   file where we handle all the script from the Gaia - Bootstrap Template -->
   <script type="text/javascript" src="assets/js/gaia.js"></script>
+  <script type="text/javascript" src="assets/js/navbar.js"></script>
   <!--Basic Boostrap-->
 </html>
