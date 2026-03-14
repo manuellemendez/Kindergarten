@@ -200,7 +200,7 @@
     </div>
 
     <!-- Intro -->
-    <div class="section">
+    <div class="section intro-section fade-in">
       <div class="container">
         <div class="title-area">
           <h2 class="letra">¿Por qué Extracurriculares?</h2>
@@ -212,17 +212,45 @@
             complementar su crecimiento integral.
           </p>
         </div>
+        <div class="intro-cards">
+          <div class="intro-card">
+            <div class="intro-card-icon">🌱</div>
+            <h4>Crecimiento Integral</h4>
+            <p>
+              Cada actividad nutre el cuerpo, la mente y las emociones de tu
+              pequeño.
+            </p>
+          </div>
+          <div class="intro-card">
+            <div class="intro-card-icon">🤝</div>
+            <h4>Amistades Duraderas</h4>
+            <p>
+              El trabajo en equipo forja vínculos y valores que los acompañan
+              toda la vida.
+            </p>
+          </div>
+          <div class="intro-card">
+            <div class="intro-card-icon">🎯</div>
+            <h4>Talentos Descubiertos</h4>
+            <p>
+              Un espacio seguro para explorar, brillar y apasionarse por lo que
+              aman.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Inglés -->
-    <div class="activity-row">
-      <div
-        class="activity-img-col"
-        style="
-          background-image: url('https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=900');
-        "
-      ></div>
+    <div class="activity-row ingles-row fade-in">
+      <div class="activity-img-col">
+        <div
+          class="activity-img-inner"
+          style="
+            background-image: url('https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=900');
+          "
+        ></div>
+      </div>
       <div class="activity-text-col">
         <div class="activity-emoji">🇬🇧</div>
         <span class="activity-tag" style="background: #e8f8ff; color: #0ea5e9"
@@ -247,11 +275,13 @@
     </div>
 
     <!-- Natación -->
-    <div class="activity-row reverse">
-      <div
-        class="activity-img-col"
-        style="background-image: url('assets/img/IMG-20200312-WA0000.jpg')"
-      ></div>
+    <div class="activity-row natacion-row reverse fade-in">
+      <div class="activity-img-col">
+        <div
+          class="activity-img-inner"
+          style="background-image: url('assets/img/IMG-20200312-WA0000.jpg')"
+        ></div>
+      </div>
       <div class="activity-text-col">
         <div class="activity-emoji">🏊</div>
         <span class="activity-tag" style="background: #e0f7fa; color: #00838f"
@@ -275,11 +305,13 @@
     </div>
 
     <!-- Danzas -->
-    <div class="activity-row">
-      <div
-        class="activity-img-col"
-        style="background-image: url('assets/img/20200315_215649.jpg')"
-      ></div>
+    <div class="activity-row danzas-row fade-in">
+      <div class="activity-img-col">
+        <div
+          class="activity-img-inner"
+          style="background-image: url('assets/img/20200315_215649.jpg')"
+        ></div>
+      </div>
       <div class="activity-text-col">
         <div class="activity-emoji">💃</div>
         <span class="activity-tag" style="background: #fdf4ff; color: #a640ae"
@@ -466,4 +498,31 @@
   <script type="text/javascript" src="assets/js/gaia.js"></script>
   <script type="text/javascript" src="assets/js/navbar.js"></script>
   <!--Basic Boostrap-->
+
+  <!-- Scroll fade-in observer -->
+  <script>
+    ;(function () {
+      var els = document.querySelectorAll('.fade-in')
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) {
+          el.classList.add('visible')
+        })
+        return
+      }
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible')
+              observer.unobserve(entry.target)
+            }
+          })
+        },
+        { threshold: 0.12 },
+      )
+      els.forEach(function (el) {
+        observer.observe(el)
+      })
+    })()
+  </script>
 </html>
